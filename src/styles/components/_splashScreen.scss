@@ -1,0 +1,33 @@
+.splashScreen {
+    height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+
+     animation:fade-out-splash 0.5s 1;
+    -webkit-animation:fade-out-splash 0.5s 1;
+    animation-fill-mode: forwards;
+
+    animation-delay:4s;
+    -webkit-animation-delay:4s; /* Safari and Chrome */
+    -webkit-animation-fill-mode: forwards;
+
+} 
+
+@keyframes fade-out-splash{
+    from {opacity :1;}
+    to {opacity :0;}
+}
+
+@-webkit-keyframes fade-out-splash{
+    from {opacity :1;}
+    to {opacity :0;}
+}
+
+.splashScreenTitle {
+    margin-top:48vh;
+}
