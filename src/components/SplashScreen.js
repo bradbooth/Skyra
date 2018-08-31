@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Col } from 'react-bootstrap'
-//import the action we want to dispatch
 
 export class SplashScreen extends React.Component {
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { Col } from 'react-bootstrap'
-import SplashScreen from './SplashScreen'
 import Header from './Header'
+import SplashScreen from './SplashScreen'
+import SurveyStart from './SurveyStart'
 
 export class HomePage extends React.Component {
 
@@ -13,6 +13,7 @@ export class HomePage extends React.Component {
         };
     }
     
+    // Show the splashscreen for 5 seconds
     componentDidMount() {
         setTimeout( () => {
             this.setTimePassed();
@@ -31,6 +32,7 @@ export class HomePage extends React.Component {
             return (
                 <div className="homepage">
                     <Header />
+                    <SurveyStart />
                 </div>
             )
         }

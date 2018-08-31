@@ -4,3 +4,11 @@ body {
   font-size: $m-size;
   line-height: 1.6;
 }
+
+.button {
+  border: solid black 1px;
+  width: 250px;
+  background-image: none;
+  background-color: transparent;
+  border-radius: 0px;
+}
