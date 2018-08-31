@@ -8,7 +8,7 @@ const Header = () => (
             <Navbar staticTop={true}>
                 <Navbar.Header>
                 <Navbar.Brand  >
-                    <NavLink to="/" className="header__title">SKÝRA</NavLink>
+                    <NavLink to="/home" className="header__title">SKÝRA</NavLink>
                 </Navbar.Brand>
                 </Navbar.Header>
                 <Navbar.Collapse>

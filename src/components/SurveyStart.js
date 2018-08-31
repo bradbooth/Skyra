@@ -1,16 +1,25 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Grid, Row, Col, Button } from 'react-bootstrap'
+// import React from 'react'
+// import { NavLink } from 'react-router-dom'
+// import { connect } from 'react-redux'
+// import { Grid, Row, Col, Button } from 'react-bootstrap'
 
-const SurveyStart = () => (
-    <Grid>
-        <Row>
-            <Col className="SurveyStart" xs={10}>
-                <h1>TAKE<br/>THE<br/>SURVEY</h1>
-                <Button className="button" >START</Button>
-            </Col>
-        </Row>
-    </Grid>
-)
+// export class SurveyStart extends React.Component {
 
-export default SurveyStart
+//     onClick = () => {
+//         console.log('Clicked')
+//         console.log(this.props)
+//     }
+
+//     render() {
+//         return (
+
+//         )
+//     }
+
+// }
+
+//                         // <Button 
+//                         //     className="button"
+//                         //     onClick={this.onClick}>START</Button>
+
+// export default connect(undefined)(SurveyStart)
