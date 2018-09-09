@@ -18,7 +18,7 @@ const Header = () => (
                             <NavItem>home</NavItem>
                         </LinkContainer>
                         <LinkContainer to="/login">
-                            <NavItem>Login</NavItem>
+                            <NavItem>login</NavItem>
                         </LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
