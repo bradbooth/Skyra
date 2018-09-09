@@ -15,7 +15,7 @@ const AppRouter = () => (
       <Switch>
         <Route path="/" component={SplashScreen} exact={true} />
         <Route path="/home" component={HomePage} exact={true} />
-        <Route path="/survey" component={Survey} exact={true} />
+        <Route path="/survey" component={Survey} exact={false} />
       </Switch>
     </div>
   </Router>
