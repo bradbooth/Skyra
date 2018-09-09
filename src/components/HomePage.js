@@ -36,10 +36,13 @@ export class HomePage extends React.Component {
                 <Header />
                 <div className="fadeIn">
                     <Grid>
-                        <Row>
-                            <Col className="SurveyStart" xs={10}>
+                        <Row className="SurveyStart">
+                            <Col md={6}>
                                 <h1>TAKE<br/>THE<br/>SURVEY</h1>
                                 <Button className="button" onClick={this.onClick}>START</Button>
+                            </Col>
+                            <Col  md={6} >
+                                <img src="/images/clear-glass-jar.png" alt=""/>
                             </Col>
                         </Row>
                     </Grid>
