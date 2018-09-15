@@ -15,7 +15,7 @@ export class SplashScreen extends React.Component {
         return (
             <div className="fadeOut">
                 <Col className="splashScreenTitle text-center align-middle" >
-                    <h1>SKÝRA</h1>
+                    <h1 >SKÝRA</h1>
                 </Col>
             </div>
         )

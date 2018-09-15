@@ -40,7 +40,7 @@ export class SurveyStage1 extends React.Component {
             <div>
                 <h1 className="text-center">What are your skin concerns?</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <Row className="inputGroup">
+                    <div className="inputGroup">
                         <input
                             type="radio"
                             id="oily"
@@ -48,7 +48,8 @@ export class SurveyStage1 extends React.Component {
                             checked={this.props.surveyChoices.skintype === "oily"}
                             onChange={this.handleChange}/>
                         <label htmlFor="oily">Oily</label>
-                    </Row>
+                        
+                    </div>
     
                     <div className="inputGroup">
                         <input

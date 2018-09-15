@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Grid, Row, Col, Button } from 'react-bootstrap'
 import Header from './Header'
 import SplashScreen from './SplashScreen'
-import SurveyStart from './SurveyStart'
 
 export class HomePage extends React.Component {
 
@@ -27,14 +26,13 @@ export class HomePage extends React.Component {
     }
 
     onClick() {
-        this.props.history.push('/survey')
+        this.props.history.push('/survey/1')
     }
 
     render() {
         return (
             <div>
-                <Header />
-                <div className="fadeIn">
+                <div>
                     <Grid>
                         <Row className="SurveyStart">
                             <Col md={6}>

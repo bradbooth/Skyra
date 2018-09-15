@@ -24,43 +24,4 @@ body {
   text-decoration: none;
 }
 
-.fadeOut {
-  animation:fade-out-splash 0.5s 1;
-  -webkit-animation:fade-out-splash 0.5s 1;
-  animation-fill-mode: forwards;
 
-  animation-delay:4s;
-  -webkit-animation-delay:4s; /* Safari and Chrome */
-  -webkit-animation-fill-mode: forwards;
-  
-  @keyframes fade-out-splash{
-  from {opacity :1;}
-  to {opacity :0;}
-  }
-  
-  @-webkit-keyframes fade-out-splash{
-  from {opacity :1;}
-  to {opacity :0;}
-  }
-} 
-
-.fadeIn {
-  animation:fade-in-splash 2.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  -webkit-animation:fade-in-splash 2.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-fill-mode: forwards;
-
-  animation-delay:0s;
-  -webkit-animation-delay:0s; /* Safari and Chrome */
-  -webkit-animation-fill-mode: forwards;
-  
-  
-  @keyframes fade-in-splash{
-      from {opacity :0;}
-      to {opacity :1;}
-  }
-  
-  @-webkit-keyframes fade-in-splash{
-      from {opacity :0;}
-      to {opacity :1;}
-  }
-}

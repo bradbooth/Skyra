@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
 import { history } from "../routers/AppRouter";
 import { Grid, Row, Col } from 'react-bootstrap'
-import Header from './Header'
 import SurveyStage1 from './Survey/surveyStage1'
 import SurveyStage2 from './Survey/surveyStage2'
-
+import SurveyStage3 from './Survey/surveyStage3'
+import { TransitionGroup, CSSTransition  } from 'react-transition-group'
 
 export class Survey extends React.Component {
     constructor() {
@@ -20,9 +20,16 @@ export class Survey extends React.Component {
     }
     
     handleNext() {
-        console.log()
-        if (this.props.surveyChoices.skintype && this.props.location.pathname === '/survey'){
+
+        // TODO - temporary! I hope...
+        if (this.props.surveyChoices.skintype && this.props.location.pathname === '/survey/1'){
             this.props.history.push('/survey/2')
+        }
+        if (this.props.surveyChoices.skintype && this.props.location.pathname === '/survey/2'){
+            this.props.history.push('/survey/3')
+        }
+        if (this.props.surveyChoices.skintype && this.props.location.pathname === '/survey/3'){
+            this.props.history.push('/home')
         }
     }
 
@@ -30,23 +37,34 @@ export class Survey extends React.Component {
         return (
             <div>
                 <Router history={history}>
-                <div className="fadeIn">
-                    <Header />
-                        <Grid>
-                            <Row>
-                                <Col className="SurveyStart" xs={12}>
-                                    <Col xs={12} md={8} mdOffset={2}>
-                                        <Switch>
-                                            <Route path="/survey" component={SurveyStage1} exact={true} />
-                                            <Route path="/survey/2" component={SurveyStage2} exact={true} />
-                                            <Route path="/survey/3" component={SurveyStage1} exact={true} />
-                                        </Switch>
-                                        <button className="button" onClick={this.handleNext}>Next</button>
+                    <Route render={({ location }) => (
+                        <div>
+                            <Grid>
+                                <Row>
+                                    <Col className="SurveyStart" xs={12}>
+                                        <Col xs={12} md={8} mdOffset={2}>
+                                            <TransitionGroup className="transitionGroup">
+                                                <CSSTransition
+                                                key={location.key}
+                                                timeout={500}
+                                                classNames='fade'
+                                                >
+                                                <div className="surveyContainer">
+                                                    <Switch location={location}>
+                                                        <Route path="/survey/1" component={SurveyStage1} exact={true} />
+                                                        <Route path="/survey/2" component={SurveyStage2} exact={true} />
+                                                        <Route path="/survey/3" component={SurveyStage3} exact={true} />
+                                                    </Switch>
+                                                    <button className="button" onClick={this.handleNext}>Next</button>
+                                                </div>
+                                                </CSSTransition>
+                                            </TransitionGroup>
+                                        </Col>
                                     </Col>
-                                </Col>
-                            </Row>
-                        </Grid>
-                    </div>
+                                </Row>
+                            </Grid>
+                        </div>
+                    )}/>
                 </Router>
             </div>
         )
@@ -58,3 +76,4 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps)(Survey)
+

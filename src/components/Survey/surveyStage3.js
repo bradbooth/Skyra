@@ -4,7 +4,7 @@ import { Row } from 'react-bootstrap'
 import { updateSurveyChoices } from '../../actions/survey'
 import { CSSTransition } from 'react-transition-group';
 
-export class SurveyStage1 extends React.Component {
+export class SurveyStage3 extends React.Component {
 
     constructor() {
         super();
@@ -24,26 +24,25 @@ export class SurveyStage1 extends React.Component {
         console.log(event.target.value)
         // this.props.handleNext()
         this.props.updateSurveyChoices({
-          skintype: event.target.value
+            skintype: event.target.value
         });
     }
 
     render() {
         return (
             <div>
-
                     <div>                
-                        <h1 className="text-center">This is survey question number 2.</h1>
+                        <h1 className="text-center">Third Page?</h1>
                         <form onSubmit={this.handleSubmit}>
-                            <Row className="inputGroup">
+                            <div className="inputGroup">
                                 <input
                                     type="radio"
-                                    id="grapeseed"
-                                    value="grapeseed"
-                                    checked={this.props.surveyChoices.skintype === "grapeseed"}
+                                    id="dullness"
+                                    value="dullness"
+                                    checked={this.props.surveyChoices.skintype === "dullness"}
                                     onChange={this.handleChange}/>
-                                <label htmlFor="grapeseed">Grapeseed</label>
-                            </Row>
+                                <label htmlFor="dullness">Dullness</label>
+                            </div>
                         </form>
                     </div>
             </div>
@@ -59,4 +58,4 @@ const mapDispatchToProps = (dispatch) => ({
     updateSurveyChoices: (surveyChoices) => dispatch(updateSurveyChoices(surveyChoices))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SurveyStage1)
+export default connect(mapStateToProps, mapDispatchToProps)(SurveyStage3)
