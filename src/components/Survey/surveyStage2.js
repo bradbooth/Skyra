@@ -10,19 +10,13 @@ export class SurveyStage1 extends React.Component {
         super();
         this.handleChange = this.handleChange.bind(this);
         this.state = {
-            isVisible: false
+            surveyOptions : [
+                "grapseed", "coconut"
+            ]
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            isVisible: true
-        })
-    }
-
     handleChange(event) {
-        console.log(event.target.value)
-        // this.props.handleNext()
         this.props.updateSurveyChoices({
           skintype: event.target.value
         });
@@ -35,7 +29,7 @@ export class SurveyStage1 extends React.Component {
                     <div>                
                         <h1 className="text-center">This is survey question number 2.</h1>
                         <form onSubmit={this.handleSubmit}>
-                            <Row className="inputGroup">
+                            <div className="inputGroup">
                                 <input
                                     type="radio"
                                     id="grapeseed"
@@ -43,7 +37,7 @@ export class SurveyStage1 extends React.Component {
                                     checked={this.props.surveyChoices.skintype === "grapeseed"}
                                     onChange={this.handleChange}/>
                                 <label htmlFor="grapeseed">Grapeseed</label>
-                            </Row>
+                            </div>
                         </form>
                     </div>
             </div>

@@ -6,15 +6,7 @@
 
 
 .SurveyStart {
-    //background-color: red;
-    font-size: 2em;
-    border-radius: 10px;
-    //background-image: url('/images/skincare.jpeg');
-    background-size: contain;
-
-    h1 {
-        margin-bottom: 0;
-    }
+    font-size: $l-size;
 
     @media screen and (min-width: 767px) {
         padding-top: 80px;

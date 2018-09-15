@@ -15,21 +15,7 @@ export class SurveyStage1 extends React.Component {
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            isVisible: true
-        })
-    }
-
-    componentWillUnmount() {
-        this.setState({
-            isVisible: false
-        })
-    }
-
     handleChange(event) {
-        console.log(event.target.value)
-        // this.props.handleNext()
         this.props.updateSurveyChoices({
           skintype: event.target.value
         });

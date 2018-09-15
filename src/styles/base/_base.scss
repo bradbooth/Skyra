@@ -3,6 +3,12 @@ body {
   font-family: Helvetica Neue, Arial, sans-serif;
   font-size: $m-size;
   line-height: 1.6;
+  border-radius: 10px;
+  background-size: contain;
+
+  h1 {
+      margin-bottom: 0;
+  }
 }
 
 .button {
@@ -24,4 +30,22 @@ body {
   text-decoration: none;
 }
 
+.button-black {
+  border: solid black 1px;
+  width: 250px;
+  background-image: none;
+  background-color: $almost-black;
+  color: $off-white;
+  border-radius: 0px;
+  text-decoration: none;
+  font-weight: 100;
+  display: block;
+  text-align: center;
+  font-size: 0.7em;
+}
+
+.button-black:hover {
+  background-color: rgb(39, 39, 39);
+  text-decoration: none;
+}
 

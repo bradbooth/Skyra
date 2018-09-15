@@ -1,0 +1,55 @@
+.storeContainer {
+    font-size: $l-size;
+    h1 {
+        text-align: center;
+    }
+}
+
+.storeItemsContainer {
+    h1 {
+        text-align: left;
+    }
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-flow:row wrap;  
+    align-content: center;
+}
+
+.storeItem {
+    // border: solid black 1px;
+    margin: 20px;
+    width: 100%;
+    flex-basis:50%;
+    
+    
+    h1 {
+        margin-top: 0px;
+    }
+    
+    img {
+        padding-top: 40px;
+    }
+    
+    .button-black {
+        width: 85%;
+        height: 30px;
+        margin: 10px;
+        font-size: $s-size;
+    }
+}
+
+.dotContainer {
+    
+    display: flex;
+    justify-content: left;
+
+    .dot {
+        height: 25px;
+        width: 25px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 2px;
+    }
+}
