@@ -11,6 +11,7 @@ const Header = () => (
                 <Navbar.Brand  >
                     <NavLink to="/home" className="header__title">SKÝRA</NavLink>
                 </Navbar.Brand>
+                <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav pullRight>
