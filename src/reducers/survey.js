@@ -1,13 +1,14 @@
 const SurveyDefaultState = {
-    skintype: ''
+    skintype: '',
+    colour: ''
 };
 
 export default (state = SurveyDefaultState, action) => {
     switch (action.type) {
-        case 'UPDATE_SURVEY_CHOICES':
+        case 'UPDATE_SURVEY_SKINTYPE':
             return {
                 ...state,
-                ...action.surveyChoices
+                skintype: action.skintype
             }
         default:
             return state

@@ -1,11 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Client from 'shopify-buy';
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
 import AppRouter, { history } from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
-import { login, logout } from "./actions/auth";
-import SplashScreen from "./components/SplashScreen";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
 import "react-dates/lib/css/_datepicker.css";
@@ -13,6 +11,13 @@ import { firebase } from "./firebase/firebase";
 
 
 const store = configureStore();
+
+const shopify_client = Client.buildClient({
+  storefrontAccessToken: '1f09301939a6b83143e62a750fa3e7b8',
+  domain: 'teststore1q1qe1.myshopify.com'
+});
+store.dispatch({type: 'SHOPIFY_STORE_CREATED', payload: shopify_client});
+
 
 const jsx = (
   <Provider store={store}>

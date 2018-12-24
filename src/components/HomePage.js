@@ -1,11 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Grid, Row, Col, Button } from "react-bootstrap";
+import { NavLink } from 'react-router-dom'
+
 
 export class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
+    this.goToProductPage = this.goToProductPage.bind(this);
     this.state = {
       timePassed: false
     };
@@ -19,27 +22,22 @@ export class HomePage extends React.Component {
     this.props.history.push("/survey/1");
   }
 
+  goToProductPage(){
+    this.props.history.push("/product")
+  }
+
   render() {
     return (
       <div>
         <Grid>
-        <Row className="SurveyStart">
-            <Col md={6}>
-            <h1>
-                TAKE
-                <br />
-                THE
-                <br />
-                SURVEY
-            </h1>
-            <Button className="button" onClick={this.onClick}>
-                START
-            </Button>
-            </Col>
-            <Col md={6}>
-            <img src="/images/clear-glass-jar.png" alt="" />
-            </Col>
-        </Row>
+
+          <Row>
+            <NavLink to="/product">Product Page</NavLink>
+          </Row>
+          <Row>
+            <NavLink to="/survey">Take the quiz</NavLink>
+          </Row>
+
         </Grid>
       </div>
     );

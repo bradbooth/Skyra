@@ -1,6 +1,5 @@
-// Survey Stage 1
 
-export const updateSurveyChoices = (surveyChoices) => ({
-    type: 'UPDATE_SURVEY_CHOICES',
-    surveyChoices
+export const startUpdateSkintype = (skintype) => ({
+    type: 'UPDATE_SURVEY_SKINTYPE',
+    skintype
 })

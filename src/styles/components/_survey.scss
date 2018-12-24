@@ -1,3 +1,14 @@
+.surveyContainer {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  height: 80vh; //Might cause issues later on mobile view
+}
+
+.surveyPage {
+  width: 100%;
+  position: absolute;
+}
 
 .inputGroup {
     background-color: transparent;
