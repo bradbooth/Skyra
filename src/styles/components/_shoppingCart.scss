@@ -24,10 +24,14 @@
   background: #bdc3c7;
 }
 
+.bm-cross:hover {
+  background: red;
+}
+
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
-  padding: 2.5em 1.5em 0;
+  background: $off-white;
+  //padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
 
@@ -38,8 +42,11 @@
 
 /* Wrapper for item list */
 .bm-item-list {
-  color: #b8b7ad;
+  color: $almost-black;
   padding: 0.8em;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
 }
 
 /* Individual item */
@@ -50,4 +57,94 @@
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+.checkout-text-right {
+  text-align: right;
+}
+.checkout-text-left {
+  text-align: left;
+}
+
+.cart-title {
+  flex: 0 1 auto;
+  outline: none;
+}
+
+/* Middle of the container with the line items */
+.cart-middle-container{
+  position: relative;
+  width: 100%;
+  overflow: auto;
+  outline: none;
+  flex: 1 1 auto;
+}
+
+.cart-empty {
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line-item {
+  padding-bottom: 10px;
+}
+
+.line-item-left {
+  padding: 0;
+}
+
+.line-item-quantity-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 8px;
+}
+
+.line-item-quantity-form {
+  max-width: 30px;
+  border-radius: 0px;
+  text-align: center;
+}
+
+.line-item-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.line-item-quantity-button {
+  font-size: 6px;
+  padding: 8px;
+  border: solid 1px $grey;
+  cursor: pointer;
+}
+.line-item-quantity-button-hover {
+  font-size: 6px;
+  padding: 8px;
+  border: solid 1px $grey;
+  cursor: pointer;
+  background: $dark-off-white;
+}
+
+
+.line-item-custom-attribute{
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+/* Bottom container with subtotal and checkout button*/
+.cart-bottom-container{
+  bottom: 75px; /* Height of header = 50px - should probably fix */
+  left: 0;
+  width: 100%;
+  border-top: solid $dark-grey 1px;
+  padding-top: 10px;
+  flex: 0 1 40px;
+  padding-bottom: 40px;
+}
+
+.checkout-button {
+  width: 100%;
+  margin: 10px;
 }

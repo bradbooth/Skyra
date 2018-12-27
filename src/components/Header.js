@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 import { NavLink } from 'react-router-dom'
 import {action as toggleMenu} from 'redux-burger-menu';
 import { LinkContainer } from "react-router-bootstrap";
-import { Navbar, NavItem, Nav } from 'react-bootstrap'
+import { Navbar, NavItem, Nav, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 export class Header extends React.Component {
 
@@ -18,7 +20,7 @@ export class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                <Navbar staticTop={true}>
+                <Navbar staticTop={true} collapseOnSelect={true} >
                     <Navbar.Header>
                     <Navbar.Brand  >
                         <NavLink to="/home" onClick={this.closeShoppingCart} className="header__title">SKÝRA</NavLink>
@@ -26,19 +28,19 @@ export class Header extends React.Component {
                     <Navbar.Toggle />
                     </Navbar.Header>
                     <Navbar.Collapse>
-                        <Navbar.Form pullRight> 
-                            <button onClick={this.toggleShoppingCart} id="header__cart-button">Cart</button>
-                        </Navbar.Form>
-                        <Nav pullRight>
+                    <Nav pullRight>
                             <LinkContainer to="/home">
                                 <NavItem onClick={this.closeShoppingCart}>home</NavItem>
                             </LinkContainer>
-                            <LinkContainer to="/store">
-                                <NavItem onClick={this.closeShoppingCart}>store</NavItem>
+                            <LinkContainer to="/product">
+                                <NavItem onClick={this.closeShoppingCart}>product</NavItem>
                             </LinkContainer>
                             <LinkContainer to="/login">
                                 <NavItem onClick={this.closeShoppingCart}>login</NavItem>
                             </LinkContainer>
+                            
+                            <NavItem onClick={this.toggleShoppingCart}>
+                            <FontAwesomeIcon icon="shopping-cart" /></NavItem>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

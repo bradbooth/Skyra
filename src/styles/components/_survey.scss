@@ -1,15 +1,5 @@
-.surveyContainer {
-  position: relative;
-  text-align: center;
-  overflow: hidden;
-  height: 80vh; //Might cause issues later on mobile view
-}
 
-.surveyPage {
-  width: 100%;
-  position: absolute;
-}
-
+/* Survey text questions style */
 .inputGroup {
     background-color: transparent;
     display: block;
@@ -107,5 +97,69 @@
 body {
   background-image: #D1D7DC;
   font-family: 'Fira Sans', sans-serif;
+}
+
+
+.survey-container {
+  //position: absolute;
+  overflow: hidden;
+  text-align: center;
+}
+
+.survey-options-container {
+  position: relative;
+}
+
+.surveyPage {
+  width: 100%;
+}
+
+.survey-bottom-row {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* Progress Bar */
+.indexedStep {
+  color: white;
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  background-color: rgba(211, 211, 211, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexedStep.accomplished {
+  background-color: $dark-grey;
+}
+
+.survey-progress-bar-container {
+  padding: 25px;
+  order: 2;
+}
+
+.survey-bottom-buttons-container{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  bottom: 0px;
+}
+
+.survey-next-stage-button{
+  width: 80px;
+}
+
+.survey-question {
+  margin-bottom: 15px;
+  border-bottom: solid black 1px; 
+}
+
+.survey-item-description {
+  text-align: left;
+  padding-left: 20px;
 }
 

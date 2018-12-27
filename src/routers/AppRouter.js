@@ -5,7 +5,7 @@ import { TransitionGroup, CSSTransition  } from 'react-transition-group'
 import createHistory from 'history/createBrowserHistory';
 import SplashScreen from '../components/SplashScreen'
 import HomePage from '../components/HomePage';
-import Product from '../components/Product';
+import Product from '../components/product/Product';
 import Header from '../components/Header'
 import Survey from '../components/survey/Survey'
 import ShoppingCart from '../components/cart/ShoppingCart'
@@ -33,7 +33,7 @@ export class AppRouter extends React.Component {
     return (
       <Router history={history}>
         <Route render={({ location }) => (
-          <div>
+          <div id="hello">
             {location.pathname !='/' && <Header />}
             <ShoppingCart right />
               <TransitionGroup className="transitionGroup">

@@ -30,7 +30,6 @@ export class HomePage extends React.Component {
     return (
       <div>
         <Grid>
-
           <Row>
             <NavLink to="/product">Product Page</NavLink>
           </Row>

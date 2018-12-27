@@ -1,4 +1,20 @@
-const cartDefaultState = {}
+const cartDefaultState = {
+    client: {},
+    products: [
+        {
+            title: '',
+            images: [
+                {
+                    src: ''
+                }
+            ]
+        }
+    ],
+    checkout: {
+        totalPrice: 0.00,
+        lineItems: []
+    }
+}
 
 export default (state = cartDefaultState, action) => {
     switch (action.type) {

@@ -1,0 +1,67 @@
+{
+    "skintype": {
+        "question" : "What is your skintype?",
+        "options" : [
+            {
+                "title": "Normal",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Dry",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Oily",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Combination",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            }
+        ]
+    },
+    "actiontype": {
+        "question" : "I want to my facemask to",
+        "options" : [
+            {
+                "title": "Cleanse",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Exfoliate",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Soothe",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            }
+        ]
+    },
+    "fragrancetype": {
+        "question" : "Select a fragrance",
+        "options" : [
+            {
+                "title": "Orange",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Eucalyptus",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Vanilla",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            }
+        ]
+    }
+}

@@ -4,6 +4,7 @@ import authReducer from '../reducers/auth';
 import surveyReducer from '../reducers/survey'
 import shopifyReducer from '../reducers/shopify'
 import cartReducer from '../reducers/cart'
+import variantReducer from '../reducers/variant'
 
 import {reducer as burgerMenu} from 'redux-burger-menu';
 
@@ -16,6 +17,7 @@ export default () => {
       survey: surveyReducer,
       shopify: shopifyReducer,
       cart: cartReducer,
+      variant: variantReducer,
       burgerMenu
     }),
     composeEnhancers(applyMiddleware(thunk))

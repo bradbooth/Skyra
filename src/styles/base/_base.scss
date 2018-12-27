@@ -1,5 +1,6 @@
 body {
   background-color: $off-white;
+  //background: url('/images/bright-yellow-brick_4460x4460.jpg');
   font-family: Helvetica Neue, Arial, sans-serif;
   font-size: $m-size;
   line-height: 1.6;
@@ -13,16 +14,10 @@ body {
 
 .button {
   border: solid black 1px;
-  width: 250px;
-  background-image: none;
-  background-color: transparent;
   border-radius: 0px;
-  text-decoration: none;
+  background: transparent;
   color: black;
-  font-weight: 100;
-  display: block;
-  text-align: center;
-  font-size: 0.7em;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -32,20 +27,23 @@ body {
 
 .button-black {
   border: solid black 1px;
-  width: 250px;
-  background-image: none;
-  background-color: $almost-black;
-  color: $off-white;
   border-radius: 0px;
-  text-decoration: none;
-  font-weight: 100;
-  display: block;
-  text-align: center;
-  font-size: 0.7em;
+  background: transparent;
+  background-color: $dark-grey;
+  color: white;
+  cursor: pointer;
+  text-shadow: none;
 }
 
 .button-black:hover {
-  background-color: rgb(39, 39, 39);
+  //background-color: rgb(39, 39, 39);
   text-decoration: none;
+}
+
+.dropdown {
+  background: transparent;
+  border: solid black 1px;
+  min-width: 300px;
+  width: 100%;
 }
 
