@@ -23,6 +23,10 @@ export class Product extends React.Component {
         };
     }
 
+    componentWillMount = () => {
+        this.props.showSurvey(false)
+    }
+
     //Add an item to the checkout cart
     addItemToCart = () => {
 

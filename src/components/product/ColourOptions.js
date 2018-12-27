@@ -17,18 +17,22 @@ export class ColorOptions extends React.Component {
 
     render() {
 
-        const colours = ["red", "blue", "green", "orange", "white", "red", "blue", "green", "orange", "white" ]
+        const colours = ["#FF5E45","#FF9C5E","#FFCE8A","#D0FF8A","#AED1A9","#FF5E45","#FF9C5E","#FFCE8A" ]
 
         return (
             <div className="colours-container">
                 {
                     colours.map((item, i) => (
-                        <span key={i} className="dot" style={{"backgroundColor": item}}></span>
+                        <span 
+                            key={i}
+                            className="dot" 
+                            style={{"backgroundColor": item}}
+                            onClick={() => console.log("clickity clieck")}></span>
                     ))
                 }
             </div>
         )
-    }
+    }   
 }
 
 const mapStateToProps = (state) => {
