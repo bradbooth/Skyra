@@ -6,29 +6,6 @@ import { Grid, Row, Col, Button } from "react-bootstrap";
 
 import oilsInfo from '../oils.json'
 
-const ratingColours = (action) => {
-    
-    return "#c9e3f1"
-    switch (action) {
-
-
-        case "brightening":
-            return "#fcff8a"//"linear-gradient(to right, #FCFE9F, #FAFE4E)"
-        case "cleansing":
-            return "#78f8bf"
-        case "soothing":
-            return "#e6bfe6"
-        case "hydration":
-            return "#83dbff"
-        case "oilControl":
-            return "#66e666"
-        case "acneControl":
-            return "#ff8576"
-        default:
-            return "black"
-    }
-}
-
 
 const RatingBox = ({title, ratings}) => (
     <div className="product-question-rating-box">
@@ -74,13 +51,13 @@ export class ProductQuestion extends React.Component {
 
         const skintype = this.props.skintype
         const actiontype = this.props.actiontype
+        const sensitive = this.props.sensitive
 
         const matches = Object.keys(oilsInfo)
         .filter(x => oilsInfo[x].skintypes.includes(skintype))
+        .filter(x => sensitive === "Yes" ? oilsInfo[x].skintypes.includes("Sensitive") : x)
         .sort((x, y) => oilsInfo[y].ratings[actiontype] - oilsInfo[x].ratings[actiontype] )
         .slice(0, 3)
-
-        console.log(matches)
 
         return (
             <div className="product-question-rating-container">
@@ -102,6 +79,7 @@ export class ProductQuestion extends React.Component {
 const mapStateToProps = (state) => {
     return {
         skintype: state.survey.skintype,
+        sensitive: state.survey.sensitive,
         actiontype: state.survey.actiontype,
         fragrancetype: state.survey.fragrancetype
     }

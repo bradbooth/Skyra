@@ -4,6 +4,11 @@ export const startUpdateSkintype = (skintype) => ({
     skintype
 })
 
+export const startUpdateSensitive = (value) => ({
+    type: 'UPDATE_SURVEY_SENSITIVE',
+    sensitive: value
+})
+
 export const startUpdateActiontype = (actiontype) => ({
     type: 'UPDATE_SURVEY_ACTIONTYPE',
     actiontype

@@ -1,46 +1,58 @@
 {
-    "teatree": {
-        "skintypes": ["Oily", "Acne"],
+    "Tea tree": {
+        "skintypes": ["Oily", "Normal", "Combination","Sensitive"],
         "ratings" : {
-            "brightening"  : "8",
-            "cleansing"    : "6",
-            "soothing"    : "2",
-            "hydration"    : "2",
-            "oilControl"   : "8",
-            "acneControl"  : "8"
+            "Brightening"   : "3",
+            "Cleansing"     : "8",
+            "Soothing"      : "6",
+            "Hydration"     : "2",
+            "Oil Control"   : "8",
+            "Acne Control"  : "9"
         }
     },
-    "orange": {
-        "skintypes": ["Oily"],
+    "Sweet Orange": {
+        "skintypes": ["Dry", "Normal", "Sensitive"],
         "ratings" : {
-            "brightening"  : "9",
-            "cleansing"    : "6",
-            "soothing"    : "2",
-            "hydration"    : "2",
-            "oilControl"   : "8",
-            "acneControl"  : "8"
+            "Brightening"   : "9",
+            "Cleansing"     : "6",
+            "Soothing"      : "3",
+            "Hydration"     : "7",
+            "Oil Control"   : "2",
+            "Acne Control"  : "8"
         }
     },
-    "lavendar": {
-        "skintypes": ["Oily"],
+    "Lavender": {
+        "skintypes": ["Normal", "Dry", "Sensitive"],
         "ratings" : {
-            "brightening"  : "9",
-            "cleansing"    : "6",
-            "soothing"    : "2",
-            "hydration"    : "2",
-            "oilControl"   : "8",
-            "acneControl"  : "8"
+            "Brightening"   : "3",
+            "Cleansing"     : "8",
+            "Soothing"      : "9",
+            "Hydration"     : "7",
+            "Oil Control"   : "4",
+            "Acne Control"  : "5"
         }
     },
-    "honey": {
-        "skintypes": ["Oily"],
+    "Peppermint": {
+        "skintypes": ["Normal", "Oily", "Combination"],
         "ratings" : {
-            "brightening"  : "10",
-            "cleansing"    : "6",
-            "soothing"    : "2",
-            "hydration"    : "2",
-            "oilControl"   : "8",
-            "acneControl"  : "8"
+            "Brightening"   : "8",
+            "Cleansing"     : "7",
+            "Soothing"      : "2",
+            "Hydration"     : "3",
+            "Oil Control"   : "8",
+            "Acne Control"  : "8"
+        }
+    },
+    "Palmarosa": {
+        "skintypes": ["Dry", "Normal"],
+        "ratings" : {
+            "Brightening"   : "3",
+            "Cleansing"     : "4",
+            "Soothing"      : "6",
+            "Hydration"     : "8",
+            "Oil Control"   : "6",
+            "Acne Control"  : "7"
         }
     }
+
 }

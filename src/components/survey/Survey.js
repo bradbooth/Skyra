@@ -2,7 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Grid, Row, Col, Button } from "react-bootstrap";
-import { startUpdateSkintype, startUpdateActiontype, startUpdateFragrancetype, startShowSurvey } from '../../actions/survey';
+import { startUpdateSkintype, 
+        startUpdateSensitive,
+        startUpdateActiontype, 
+        startUpdateFragrancetype,
+        startShowSurvey } from '../../actions/survey';
 import TextQuestion from './surveyQuestions/TextQuestion'
 import CircleQuestion from './surveyQuestions/CircleQuestion'
 import ProductQuestion from './surveyQuestions/ProductQuestion'
@@ -54,21 +58,10 @@ export class Survey extends React.Component {
     render() {
 
         const stages = {
-            1: {
-                question: "First question",
-                options: ["1", "1", "1"],
-                updateStore: this.props.updateSkintype
-            },
-            2: {
-                question: "Second question",
-                options: ["2", "2"],
-                updateStore: this.props.updateActiontype
-            },
-            3: {
-                question: "Third question",
-                options: new Array(5).fill(0),
-                updateStore: this.props.updateFragrancetype
-            }
+            1: {updateStore: this.props.updateSkintype},
+            2: {updateStore: this.props.updateSensitive},
+            3: {updateStore: this.props.updateActiontype},
+            4: {updateStore: this.props.updateFragrancetype}
         }
 
         
@@ -132,6 +125,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
     updateSkintype: (skinType) => dispatch(startUpdateSkintype(skinType)),
+    updateSensitive: (bool) => dispatch(startUpdateSensitive(bool)),
     updateActiontype: (actionType) => dispatch(startUpdateActiontype(actionType)),
     updateFragrancetype: (fragranceType) => dispatch(startUpdateFragrancetype(fragranceType)),
     showSurvey: (bool) => dispatch(startShowSurvey(bool))

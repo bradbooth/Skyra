@@ -220,10 +220,11 @@ body {
 }
 
 .product-question-rating-box {
-  width: 300px;
-  padding: 30px;
+  min-width: 340px;
+  padding: 15px;
   border: solid #e5e5e5 1px;
   margin: 20px 0px;
+  font-size: 14px;
 }
 
 .product-question-rating-row {

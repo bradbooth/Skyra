@@ -15,6 +15,11 @@ export default (state = SurveyDefaultState, action) => {
                 ...state,
                 skintype: action.skintype
             }
+        case 'UPDATE_SURVEY_SENSITIVE':
+            return {
+                ...state,
+                sensitive: action.sensitive
+            }
         case 'UPDATE_SURVEY_ACTIONTYPE':
             return {
                 ...state,

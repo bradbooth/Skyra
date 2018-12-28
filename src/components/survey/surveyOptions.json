@@ -25,41 +25,56 @@
         ]
     },
     "2": {
-        "question" : "I want to my facemask to",
+        "question" : "Do you have sensitive skin?",
         "options" : [
             {
-                "title": "brightening",
+                "title": "No",
                 "description": "This is the description for the selected option",
                 "image": "https://via.placeholder.com/150"
             },
             {
-                "title": "cleansing",
-                "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
-            },
-            {
-                "title": "soothing",
-                "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
-            },
-            {
-                "title": "hydration",
-                "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
-            },
-            {
-                "title": "oilControl",
-                "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
-            },
-            {
-                "title": "acneControl",
+                "title": "Yes",
                 "description": "This is the description for the selected option",
                 "image": "https://via.placeholder.com/150"
             }
         ]
     },
     "3": {
+        "question" : "I want to my facemask to",
+        "options" : [
+            {
+                "title": "Brightening",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Cleansing",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Soothing",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Hydration",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Oil Control",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Acne Control",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            }
+        ]
+    },
+    "4": {
         "question" : "Select a fragrance",
         "options" : [
             {
