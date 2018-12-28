@@ -107,7 +107,19 @@ body {
 }
 
 .survey-top-row {
-  height: 500px;
+  
+}
+
+.survey-arrow-left-container {
+  text-align: left;
+  position: absolute;
+  padding: 10px 50px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.survey-arrow-left-container-disabled {
+  cursor: not-allowed;
 }
 .survey-options-container {
   position: relative;
@@ -166,3 +178,66 @@ body {
   padding-left: 20px;
 }
 
+
+/*Circle Questions*/
+
+.circle {
+  height: 150px;
+  width: 150px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.circle:hover {
+  box-shadow: 0px 0px 10px 0px ;
+  //border: solid black 1px;
+}
+
+.circle-question-title-container {
+  padding: 10px 0px;
+}
+
+.circle-question-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+
+
+/* Product Questions */
+.product-question-title-container {
+  width: 100%;
+}
+
+.product-question-rating-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.product-question-rating-box {
+  width: 300px;
+  padding: 30px;
+  border: solid #e5e5e5 1px;
+  margin: 20px 0px;
+}
+
+.product-question-rating-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.product-question-rating-label {
+  text-align: right;
+}
+
+.product-question-select-button {
+  width: 100%;
+  margin-top: 15px;
+}

@@ -47,3 +47,8 @@ body {
   width: 100%;
 }
 
+.disabled {
+  opacity: 0.3;
+  color: gray;
+  cursor: not-allowed !important;
+}

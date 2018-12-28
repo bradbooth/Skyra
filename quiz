@@ -1,0 +1,55 @@
+* Age group
+
+
+What is your skin type?
+    Dry,
+    Combination,
+    Oily,
+    Normal
+
+Do you have sensitive skin?
+    Yes
+    No
+    I dont know  
+
+    
+What are you looking for in a mask?
+    brightening
+    cleansing
+    soothing
+    hydration
+    oil control
+    acne control
+
+What fragrance?
+    None,
+    Orange,
+    Vanilla
+
+What colour?
+    Red,
+    Blue
+
+Bar chart
+    brightening
+    cleansing
+    soothing
+    hydration
+    oil control
+
+Essential Oils
+    Teatree
+        skintype : [
+            Oily,
+            Normal
+        ],
+        lookingFor: {
+            brightening  : 8
+            cleansing    : 6
+            soothing     : 2
+            hydration    : 2
+            oil control  : 8
+            acne control : 8
+        }
+
+

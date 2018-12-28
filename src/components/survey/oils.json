@@ -1,0 +1,46 @@
+{
+    "teatree": {
+        "skintypes": ["Oily", "Acne"],
+        "ratings" : {
+            "brightening"  : "8",
+            "cleansing"    : "6",
+            "soothing"    : "2",
+            "hydration"    : "2",
+            "oilControl"   : "8",
+            "acneControl"  : "8"
+        }
+    },
+    "orange": {
+        "skintypes": ["Oily"],
+        "ratings" : {
+            "brightening"  : "9",
+            "cleansing"    : "6",
+            "soothing"    : "2",
+            "hydration"    : "2",
+            "oilControl"   : "8",
+            "acneControl"  : "8"
+        }
+    },
+    "lavendar": {
+        "skintypes": ["Oily"],
+        "ratings" : {
+            "brightening"  : "9",
+            "cleansing"    : "6",
+            "soothing"    : "2",
+            "hydration"    : "2",
+            "oilControl"   : "8",
+            "acneControl"  : "8"
+        }
+    },
+    "honey": {
+        "skintypes": ["Oily"],
+        "ratings" : {
+            "brightening"  : "10",
+            "cleansing"    : "6",
+            "soothing"    : "2",
+            "hydration"    : "2",
+            "oilControl"   : "8",
+            "acneControl"  : "8"
+        }
+    }
+}

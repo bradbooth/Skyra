@@ -33,6 +33,9 @@ export class HomePage extends React.Component {
           <Row>
             <NavLink to="/product">Product Page</NavLink>
           </Row>
+          <Row>
+            <NavLink to="/survey">Survey Page</NavLink>
+          </Row>
         </Grid>
       </div>
     );

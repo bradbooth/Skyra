@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { CSSTransition  } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { Grid, Row, Col, Button } from "react-bootstrap";
 import { startUpdateSkintype, startUpdateActiontype, startUpdateFragrancetype, startShowSurvey } from '../../actions/survey';
 import TextQuestion from './surveyQuestions/TextQuestion'
+import CircleQuestion from './surveyQuestions/CircleQuestion'
+import ProductQuestion from './surveyQuestions/ProductQuestion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import SurveyProgress from './SurveyProgress'
@@ -11,24 +13,8 @@ import SurveyProgress from './SurveyProgress'
 import surveyOptions from './surveyOptions.json'
 
 const timeout = 800
-const slideInFromRight = "slide-in-right"
-const slideInFromLeft = "slide-in-left"
-let animation = "slide-in-right"
 
-const maxStages = Object.keys(surveyOptions).length;
-
-const Slide = ({transistionIn, children}) => (
-    <CSSTransition
-    in={transistionIn}
-    timeout={timeout}
-    classNames={animation}
-    unmountOnExit
-    >
-        <Col xs={10} md={4} className="surveyPage">
-            {children}    
-        </Col>
-    </CSSTransition> 
-)
+const maxStages = Object.keys(surveyOptions).length + 1;
 
 export class Survey extends React.Component {
 
@@ -43,7 +29,6 @@ export class Survey extends React.Component {
 
     next = () => {
         if(this.state.stage < maxStages){
-            animation = slideInFromRight
             this.setState({
                 stage: this.state.stage + 1,
             })
@@ -59,7 +44,6 @@ export class Survey extends React.Component {
                 nextOption: 'Next'
             })
 
-            animation = slideInFromLeft
             this.setState({
                 stage: this.state.stage - 1,
             })
@@ -69,48 +53,60 @@ export class Survey extends React.Component {
 
     render() {
 
+        const stages = {
+            1: {
+                question: "First question",
+                options: ["1", "1", "1"],
+                updateStore: this.props.updateSkintype
+            },
+            2: {
+                question: "Second question",
+                options: ["2", "2"],
+                updateStore: this.props.updateActiontype
+            },
+            3: {
+                question: "Third question",
+                options: new Array(5).fill(0),
+                updateStore: this.props.updateFragrancetype
+            }
+        }
+
+        
         return (
             <div className="survey-container">
-                <div className="survey-top-row">
-                    <div className="survey-options-container">
-                        <Slide
-                            className="surveyPage"
-                            transistionIn={this.state.stage == 1}
-                            children={
-                                <TextQuestion 
-                                    question={surveyOptions.skintype.question}
-                                    options={surveyOptions.skintype.options}
-                                    selection={this.props.skintype}
-                                    updateState={this.props.updateSkintype}
-                                />
-                            }
-                        />
-                        <Slide
-                            className="surveyPage"
-                            transistionIn={this.state.stage == 2}
-                            children={
-                                <TextQuestion 
-                                    question={surveyOptions.actiontype.question}
-                                    options={surveyOptions.actiontype.options}
-                                    selection={this.props.actiontype}
-                                    updateState={this.props.updateActiontype}
-                                />
-                            }
-                        />
-                        <Slide
-                            className="surveyPage"
-                            transistionIn={this.state.stage == 3}
-                            children={
-                                <TextQuestion 
-                                    question={surveyOptions.fragrancetype.question}
-                                    options={surveyOptions.fragrancetype.options}
-                                    selection={this.props.fragrancetype}
-                                    updateState={this.props.updateFragrancetype}
-                                />
-                            }
-                        />
-                    </div>  
-                </div>
+                <TransitionGroup className="transitionGroup">
+                    <CSSTransition
+                        key={this.state.stage}
+                        timeout={200}
+                        classNames='fade'
+                        
+                    >
+                        <div className="survey-top-row">
+                            <div 
+                                className={"survey-arrow-left-container" + (this.state.stage == 1 ? " disabled" : "")}
+                                onClick={this.previous}>
+                                <FontAwesomeIcon icon="arrow-left"/>
+                            </div>
+                            <div className="survey-options-container">
+                                <Row>
+                                    <Col xs={10} xsOffset={1} md={10} mdOffset={1}>
+                                        {this.state.stage < 4 && 
+                                            <CircleQuestion
+                                                question={surveyOptions[this.state.stage].question}
+                                                options={surveyOptions[this.state.stage].options}
+                                                action={this.next}
+                                                updateState={stages[this.state.stage].updateStore}
+                                            />
+                                        }
+                                        {this.state.stage >= 4 && 
+                                            <ProductQuestion />
+                                        }
+                                    </Col>
+                                </Row>
+                            </div>  
+                        </div>
+                    </CSSTransition>
+                </TransitionGroup>
                 <div className="survey-bottom-row">
                     <Row >
                         <Col xs={8} xsOffset={2} md={8} mdOffset={2} className="survey-progress-bar-container">
@@ -118,16 +114,6 @@ export class Survey extends React.Component {
                                 maxStages = {maxStages}
                                 stage = {this.state.stage}
                             />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col  className="survey-bottom-buttons-container">
-                            <Button className="button survey-next-stage-button" onClick={this.previous} disabled={this.state.stage == 1}>Previous</Button>
-                            <Button 
-                                className="button survey-next-stage-button" 
-                                onClick={this.next}>
-                                {this.state.stage == maxStages ? 'Finish' : 'Next'}
-                            </Button>
                         </Col>
                     </Row>
                 </div>
@@ -153,3 +139,41 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Survey);
+
+
+// <Fade
+//                                     className="surveyPage"
+//                                     transistionIn={this.state.stage == 1}
+//                                     children={
+//                                         <CircleQuestion
+//                                             question="This is the question."
+//                                             options={["Oily", "Gross"]}
+//                                             action={this.next}
+//                                             updateState={this.props.updateSkintype}
+//                                         />
+//                                     }
+//                                 />
+//                                 <Fade
+//                                     className="surveyPage"
+//                                     transistionIn={this.state.stage == 2}
+//                                     children={
+//                                         <CircleQuestion
+//                                             question="This is the next question."
+//                                             options={new Array(5).fill(0)}
+//                                             action={this.next}
+//                                             updateState={this.props.updateActiontype}
+//                                         />
+//                                     }
+//                                 />
+//                                 <Fade
+//                                     className="surveyPage"
+//                                     transistionIn={this.state.stage == 3}
+//                                     children={
+//                                         <CircleQuestion
+//                                             question="This is the final question."
+//                                             options={new Array(8).fill(0)}
+//                                             action={this.next}
+//                                             updateState={this.props.updateFragrancetype}
+//                                         />
+//                                     }
+//                                 />

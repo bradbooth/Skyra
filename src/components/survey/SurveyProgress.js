@@ -35,6 +35,15 @@ const SuveyProgress = ({maxStages, stage}) => (
             </div>
         )}
         </Step>
+        <Step transition="scale">
+        {({ accomplished, index }) => (
+            <div
+            className={`indexedStep ${accomplished ? "accomplished" : null}`}
+            >
+            {index + 1}
+            </div>
+        )}
+        </Step>
     </ProgressBar>
 )
 

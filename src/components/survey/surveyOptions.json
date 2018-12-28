@@ -1,5 +1,5 @@
 {
-    "skintype": {
+    "1": {
         "question" : "What is your skintype?",
         "options" : [
             {
@@ -24,27 +24,42 @@
             }
         ]
     },
-    "actiontype": {
+    "2": {
         "question" : "I want to my facemask to",
         "options" : [
             {
-                "title": "Cleanse",
+                "title": "brightening",
                 "description": "This is the description for the selected option",
                 "image": "https://via.placeholder.com/150"
             },
             {
-                "title": "Exfoliate",
+                "title": "cleansing",
                 "description": "This is the description for the selected option",
                 "image": "https://via.placeholder.com/150"
             },
             {
-                "title": "Soothe",
+                "title": "soothing",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "hydration",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "oilControl",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "acneControl",
                 "description": "This is the description for the selected option",
                 "image": "https://via.placeholder.com/150"
             }
         ]
     },
-    "fragrancetype": {
+    "3": {
         "question" : "Select a fragrance",
         "options" : [
             {

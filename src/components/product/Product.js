@@ -10,7 +10,7 @@ import { startShowSurvey } from '../../actions/survey'
 import Survey from './../survey/Survey'
 import ProductOptions from './ProductOptions'
 import ColorOptions from './ColourOptions';
-
+import AddToCartButton from './AddToCartButton'
 
 export class Product extends React.Component {
 
@@ -19,42 +19,12 @@ export class Product extends React.Component {
 
         this.state = {
             dropdownselection: "Red",
-            currentVariant: "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8xODc1MzY0NjQ5Mzc2MA==", //TODO - This should be pulled dynamically from products
+            currentVariant: 1
         };
     }
 
     componentWillMount = () => {
         this.props.showSurvey(false)
-    }
-
-    //Add an item to the checkout cart
-    addItemToCart = () => {
-
-        const lineItemsToAdd = [{
-            variantId: this.state.currentVariant, 
-            quantity: 1,
-            customAttributes: Object.keys(this.props.variants).map((item) => (
-                {
-                    key: item,
-                    value: this.props.variants[item]
-                }
-            ))
-        }]
-
-        console.log()
-
-        const checkoutId = this.props.checkout.id
-
-        this.props.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {
-            this.props.updateCheckout(res)
-        });
-
-        this.props.showCart(true)
-    }
-
-    dropdownChanged = (e) => {
-        const dropdownselection = e.target.value
-        this.setState(() => ({ dropdownselection }));
     }
 
     render() {
@@ -89,7 +59,7 @@ export class Product extends React.Component {
                                     <ColorOptions />
                                 </Col>
                                 <Col xs={10} xsOffset={1} className="product-options-buttons">
-                                    <Button className="button-black" type="button" onClick={this.addItemToCart}>Add to cart</Button>
+                                    <AddToCartButton />
                                     <Button className="button" type="button" onClick={() => this.props.showSurvey(true)}>Take the quiz</Button>
                                 </Col>
                             </div>
@@ -112,8 +82,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    updateCheckout: (checkout) => dispatch(startUpdateCheckout(checkout)),
-    showCart: () => dispatch(toggleMenu(true)),
     showSurvey: (bool) => dispatch(startShowSurvey(bool))
 });
   
