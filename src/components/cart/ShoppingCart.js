@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { Grid, Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { TransitionGroup, CSSTransition  } from 'react-transition-group'
-import {slide as Menu} from 'react-burger-menu';
-import {decorator as reduxBurgerMenu} from 'redux-burger-menu';
-import LineItem from './LineItem';
+import { slide as Menu } from 'react-burger-menu';
+import { decorator as reduxBurgerMenu } from 'redux-burger-menu';
+import { LineItem } from './LineItem';
 
 const CartMenu = reduxBurgerMenu(Menu);
 
@@ -28,7 +28,7 @@ export class ShoppingCart extends React.Component {
         return (
           <CartMenu right>
 
-            <h1 className="cart-title">Your Cart</h1>
+            {/* <h1 className="cart-title">Your Cart</h1>
 
             <Grid className="cart-middle-container">
             <TransitionGroup className="transitionGroup">
@@ -62,7 +62,7 @@ export class ShoppingCart extends React.Component {
                         </Button>
                     </Col>
                 </Row>
-            </Grid>
+            </Grid>  */}
 
           </CartMenu>
         );

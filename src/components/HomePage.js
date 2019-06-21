@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Grid, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { NavLink } from 'react-router-dom'
 
 
@@ -29,14 +29,14 @@ export class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <Grid>
+        <Container>
           <Row>
             <NavLink to="/product">Product Page</NavLink>
           </Row>
           <Row>
             <NavLink to="/survey">Survey Page</NavLink>
           </Row>
-        </Grid>
+        </Container>
       </div>
     );
   }

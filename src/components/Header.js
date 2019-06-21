@@ -20,15 +20,15 @@ export class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                <Navbar staticTop={true} collapseOnSelect={true} >
-                    <Navbar.Header>
+                <Navbar fixed={top} collapseOnSelect={true} >
+                    {/* <Navbar.Header> */}
                     <Navbar.Brand  >
                         <NavLink to="/home" onClick={this.closeShoppingCart} className="header__title">SKÝRA</NavLink>
                     </Navbar.Brand>
                     <Navbar.Toggle />
-                    </Navbar.Header>
+                    {/* </Navbar.Header> */}
                     <Navbar.Collapse>
-                    <Nav pullRight>
+                    <Nav className="justify-content-end">
                             <LinkContainer to="/home">
                                 <NavItem onClick={this.closeShoppingCart}>home</NavItem>
                             </LinkContainer>
