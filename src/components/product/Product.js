@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { action as toggleMenu } from 'redux-burger-menu';
-import { Grid, Row, Col, Button, DropdownButton, MenuItem } from "react-bootstrap"
+import { Container, Row, Col, Button, DropdownButton, MenuItem } from "react-bootstrap"
 import { TransitionGroup, CSSTransition  } from 'react-transition-group'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,7 +29,7 @@ export class Product extends React.Component {
 
     render() {
         return (
-            <Grid>
+            <Container>
                 <Row>
                     <Col xs={12} sm={12} md={6} className="product-image-container">
                         <img src={this.props.products && this.props.products[0].images[0].src} alt=""/>
@@ -52,13 +52,13 @@ export class Product extends React.Component {
                             unmountOnExit
                         >
                             <div className="product-options">
-                                <Col xs={10} xsOffset={1}>
+                                <Col xs={{order: 10, offset: 1}}>
                                     <ProductOptions />
                                 </Col>
-                                <Col xs={6} xsOffset={3}>
+                                <Col xs={{order: 6, offset: 3}}>
                                     <ColorOptions />
                                 </Col>
-                                <Col xs={10} xsOffset={1} className="product-options-buttons">
+                                <Col xs={{order: 10, offset: 1}} className="product-options-buttons">
                                     <AddToCartButton />
                                     <Button className="button" type="button" onClick={() => this.props.showSurvey(true)}>Take the quiz</Button>
                                 </Col>
@@ -66,7 +66,7 @@ export class Product extends React.Component {
                         </CSSTransition> 
                     </Col>
                 </Row>
-            </Grid>
+            </Container>
         )
     }
 }

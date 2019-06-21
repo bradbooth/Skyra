@@ -38,12 +38,12 @@ export class ProductOptions extends React.Component {
             <div>
                 <Row>
                     <Row>
-                        <Col xs={10} xsOffset={1}>
+                        <Col xs={{order: 10, offset: 1}}>
                             <h1> {this.props.products && this.props.products[0].title}</h1>
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs={10} xsOffset={1}>
+                        <Col xs={{order: 10, offset: 1}}>
                             <FontAwesomeIcon icon="star" />
                             <FontAwesomeIcon icon="star" />
                             <FontAwesomeIcon icon="star" />
@@ -52,7 +52,7 @@ export class ProductOptions extends React.Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs={10} xsOffset={1}>
+                        <Col xs={{order: 10, offset: 1}}>
                             <p> 
                                 This is a brief description of the face mask. Need help
                                 choosing? Take the quiz and find whats right for you
@@ -60,7 +60,7 @@ export class ProductOptions extends React.Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs={10} xsOffset={1}>
+                        <Col xs={{order: 10, offset: 1}}>
                             <DropdownMenu
                                 title="Base" 
                                 options={variantOptions.base.options}

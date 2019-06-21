@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { Grid, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { TransitionGroup, CSSTransition  } from 'react-transition-group'
 import { slide as Menu } from 'react-burger-menu';
@@ -28,9 +28,9 @@ export class ShoppingCart extends React.Component {
         return (
           <CartMenu right>
 
-            {/* <h1 className="cart-title">Your Cart</h1>
-
-            <Grid className="cart-middle-container">
+            <h1 className="cart-title">Your Cart</h1>
+ 
+            <Container className="cart-middle-container">
             <TransitionGroup className="transitionGroup">
                 {this.props.checkout.lineItems.map((item, i) => (
                     <CSSTransition
@@ -42,9 +42,9 @@ export class ShoppingCart extends React.Component {
                     </CSSTransition>
                 ))}
             </TransitionGroup>
-            </Grid>
+            </Container>
 
-            <Grid className="cart-bottom-container">
+            <Container className="cart-bottom-container">
                 <Row >
                     <Col xs={8} className="checkout-text-left">Shipping</Col>
                     <Col xs={4} className="checkout-text-right">FREE</Col>
@@ -55,14 +55,14 @@ export class ShoppingCart extends React.Component {
                 </Row>
 
                 <Row>
-                    <Col xs={10} xsOffset={1}>
+                    <Col xs={{order:10, offset:1}} >
                         <Button 
                             onClick={this.openCheckout}
                             className="button checkout-button">Checkout
                         </Button>
                     </Col>
                 </Row>
-            </Grid>  */}
+            </Container> 
 
           </CartMenu>
         );

@@ -82,7 +82,7 @@ export class Survey extends React.Component {
                             </div>
                             <div className="survey-options-container">
                                 <Row>
-                                    <Col xs={10} xsOffset={1} md={10} mdOffset={1}>
+                                    <Col xs={{order: 10, offset: 1}} md={{order: 10, offset: 1}}>
                                         {this.state.stage < 4 && 
                                             <CircleQuestion
                                                 question={surveyOptions[this.state.stage].question}
@@ -102,7 +102,7 @@ export class Survey extends React.Component {
                 </TransitionGroup>
                 <div className="survey-bottom-row">
                     <Row >
-                        <Col xs={8} xsOffset={2} md={8} mdOffset={2} className="survey-progress-bar-container">
+                        <Col xs={{order: 8, offset: 2}} md={{order: 8, offset: 2}} className="survey-progress-bar-container">
                             <SurveyProgress 
                                 maxStages = {maxStages}
                                 stage = {this.state.stage}
