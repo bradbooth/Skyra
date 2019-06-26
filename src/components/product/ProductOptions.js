@@ -37,47 +37,39 @@ export class ProductOptions extends React.Component {
         return (
             <div>
                 <Row>
-                    <Row>
-                        <Col xs={{order: 10, offset: 1}}>
-                            <h1> {this.props.products && this.props.products[0].title}</h1>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={{order: 10, offset: 1}}>
-                            <FontAwesomeIcon icon="star" />
-                            <FontAwesomeIcon icon="star" />
-                            <FontAwesomeIcon icon="star" />
-                            <FontAwesomeIcon icon="star" />
-                            <FontAwesomeIcon icon="star" />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={{order: 10, offset: 1}}>
-                            <p> 
-                                This is a brief description of the face mask. Need help
-                                choosing? Take the quiz and find whats right for you
-                            </p>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs={{order: 10, offset: 1}}>
-                            <DropdownMenu
-                                title="Base" 
-                                options={variantOptions.base.options}
-                                onChange={(e) => this.props.updateBase(e.target.value)}
-                            />
-                            <DropdownMenu
-                                title="Oil" 
-                                options={variantOptions.oil.options}
-                                onChange={(e) => this.props.updateOil(e.target.value)}
-                            />
-                            <DropdownMenu
-                                title="Fragrance" 
-                                options={["Grapeseed", "Coconut", "Castor"]}
-                                onChange={this.dropdownChanged}
-                            />
-                        </Col>
-                    </Row>
+                    <Col xs={12}>
+                        <h1> {this.props.products && this.props.products[0].title}</h1>
+                    </Col>
+                    <Col xs={12}>
+                        <FontAwesomeIcon icon="star" />
+                        <FontAwesomeIcon icon="star" />
+                        <FontAwesomeIcon icon="star" />
+                        <FontAwesomeIcon icon="star" />
+                        <FontAwesomeIcon icon="star" />
+                    </Col>
+                    <Col xs={12}>
+                        <p> 
+                            This is a brief description of the face mask. Need help
+                            choosing? Take the quiz and find whats right for you
+                        </p>
+                    </Col>
+                    <Col xs={12}>
+                        <DropdownMenu
+                            title="Base" 
+                            options={variantOptions.base.options}
+                            onChange={(e) => this.props.updateBase(e.target.value)}
+                        />
+                        <DropdownMenu
+                            title="Oil" 
+                            options={variantOptions.oil.options}
+                            onChange={(e) => this.props.updateOil(e.target.value)}
+                        />
+                        <DropdownMenu
+                            title="Fragrance" 
+                            options={["Grapeseed", "Coconut", "Castor"]}
+                            onChange={this.dropdownChanged}
+                        />
+                    </Col>
                 </Row>
             </div>
         )
