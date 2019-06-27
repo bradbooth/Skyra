@@ -59,6 +59,12 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
+.cart-main-container {
+  font-size: 20px;
+  overflow: scroll;
+  min-width: 300px;
+}
+
 .checkout-text-right {
   text-align: right;
 }

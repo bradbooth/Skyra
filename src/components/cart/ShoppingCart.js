@@ -26,36 +26,37 @@ export class ShoppingCart extends React.Component {
 
     render () {
         return (
-          <CartMenu right>
+          <CartMenu className="cart-main-container" right>
 
             <h1 className="cart-title">Your Cart</h1>
  
             <Container className="cart-middle-container">
-            <TransitionGroup className="transitionGroup">
-                {this.props.checkout.lineItems.map((item, i) => (
-                    <CSSTransition
-                    key={item.id}
-                    timeout={350}
-                    classNames='fade'
-                    >
-                        <LineItem key={i} {...item}/>
-                    </CSSTransition>
-                ))}
-            </TransitionGroup>
+                <TransitionGroup className="transitionGroup">
+                    {this.props.checkout.lineItems.map((item, i) => (
+                        <CSSTransition
+                        key={item.id}
+                        timeout={350}
+                        classNames='fade'
+                        >
+                            <LineItem key={i} {...item}/>
+                        </CSSTransition>
+                    ))}
+                </TransitionGroup>
             </Container>
 
             <Container className="cart-bottom-container">
                 <Row >
-                    <Col xs={8} className="checkout-text-left">Shipping</Col>
-                    <Col xs={4} className="checkout-text-right">FREE</Col>
+                    <Col xs={6} className="checkout-text-left">Shipping</Col>
+                    <Col xs={6} className="checkout-text-right">FREE</Col>
                 </Row>
+
                 <Row >
-                    <Col xs={8} className="checkout-text-left">Subtotal</Col>
-                    <Col xs={4} className="checkout-text-right">${this.props.checkout.totalPrice}</Col>
+                    <Col xs={6} className="checkout-text-left">Subtotal</Col>
+                    <Col xs={6} className="checkout-text-right">${this.props.checkout.totalPrice}</Col>
                 </Row>
 
                 <Row>
-                    <Col xs={{order:10, offset:1}} >
+                    <Col xs={12} >
                         <Button 
                             onClick={this.openCheckout}
                             className="button checkout-button">Checkout

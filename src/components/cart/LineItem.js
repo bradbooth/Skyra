@@ -149,10 +149,10 @@ export class LineItem extends React.Component {
                </Col>
                
                 <Col xs={8} md={8} >
-                    <Row>
-                        {this.props.title}
-                    </Row>
-                    <Row>
+                    <Col xs={12}>
+                        <h4>{this.props.title}</h4>
+                    </Col>
+                    <Col xs={12}>
                         {this.props.customAttributes.map(
                             (item, i) => <div 
                                             key={i} 
@@ -160,7 +160,7 @@ export class LineItem extends React.Component {
                                             {item.value}
                                         </div>)
                         }
-                    </Row>
+                    </Col>
                 </Col>
             </Row>
         )
