@@ -24,7 +24,7 @@ export class Header extends React.Component {
                     
                     <Nav.Link>
                         <LinkContainer to="/home">
-                            <NavItem onClick={this.closeShoppingCart}>SKYRA</NavItem>
+                            <NavItem className="header-title" onClick={this.closeShoppingCart}>SKÝRA</NavItem>
                         </LinkContainer>
                     </Nav.Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
