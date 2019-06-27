@@ -19,6 +19,11 @@ export const startUpdateFragrancetype = (fragrancetype) => ({
     fragrancetype: fragrancetype
 })
 
+export const startUpdateExfoliatortype = (exfoliatortype) => ({
+    type: 'UPDATE_SURVEY_EXFOLIATORTYPE',
+    exfoliatortype: exfoliatortype
+})
+
 export const startShowSurvey = (bool) => ({
     type: 'UPDATE_SURVEY_ACTIVE',
     active: bool

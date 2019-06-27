@@ -5,7 +5,8 @@ const SurveyDefaultState = {
     active: false,
     skintype: surveyOptions[1].options[0].title,
     actiontype: surveyOptions[2].options[0].title,
-    fragrancetype: surveyOptions[3].options[0].title  
+    fragrancetype: surveyOptions[3].options[0].title,
+    exfoliatortype: surveyOptions[4].options[0].title    
 };
 
 export default (state = SurveyDefaultState, action) => {
@@ -29,6 +30,11 @@ export default (state = SurveyDefaultState, action) => {
             return {
                 ...state,
                 fragrancetype: action.fragrancetype
+            }
+        case 'UPDATE_SURVEY_EXFOLIATORTYPE':
+            return {
+                ...state,
+                exfoliatortype: action.exfoliatortype
             }
         case 'UPDATE_SURVEY_ACTIVE':
             return {

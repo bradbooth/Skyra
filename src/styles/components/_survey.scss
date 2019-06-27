@@ -122,8 +122,12 @@ body {
 .surveyPage {
   width: 100%;
 }
+.survey-top-row {
+  min-height: 60vh;
+}
 
 .survey-bottom-row {
+  bottom: 0px;
   position: relative;
   height: 100%;
   width: 100%;
@@ -191,7 +195,7 @@ body {
 }
 
 .circle-question-title-container {
-  padding: 10px 0px;
+  padding: 10px 0px 30px 0px;
 }
 
 .circle-question-container {

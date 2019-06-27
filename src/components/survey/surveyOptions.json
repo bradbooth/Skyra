@@ -93,5 +93,25 @@
                 "image": "https://via.placeholder.com/150"
             }
         ]
+    },
+    "5": {
+        "question" : "Select an exfoliator",
+        "options" : [
+            {
+                "title": "None",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Jojoba",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Chestnut",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            }
+        ]
     }
 }
