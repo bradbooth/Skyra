@@ -1,4 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 import thunk from 'redux-thunk';
 import authReducer from '../reducers/auth';
 import surveyReducer from '../reducers/survey'
@@ -8,7 +10,7 @@ import variantReducer from '../reducers/variant'
 
 import {reducer as burgerMenu} from 'redux-burger-menu';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = composeWithDevTools({ trace: true, traceLimit: 25 });
 
 export default () => {
   const store = createStore(

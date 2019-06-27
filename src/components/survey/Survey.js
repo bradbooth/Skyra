@@ -70,19 +70,17 @@ export class Survey extends React.Component {
                 <TransitionGroup className="transitionGroup">
                     <CSSTransition
                         key={this.state.stage}
-                        timeout={200}
+                        timeout={400}
                         classNames='fade'
                         
                     >
-                        <div className="survey-top-row">
-                            <div 
+                        <Row className="survey-top-row">
+                            <Col 
                                 className={"survey-arrow-left-container" + (this.state.stage == 1 ? " disabled" : "")}
                                 onClick={this.previous}>
                                 <FontAwesomeIcon icon="arrow-left"/>
-                            </div>
-                            <div className="survey-options-container">
-                                <Row>
-                                    <Col xs={10} xsOffset={1} md={10} mdOffset={1}>
+                            </Col>
+                            <Col className="survey-options-container">
                                         {this.state.stage < 4 && 
                                             <CircleQuestion
                                                 question={surveyOptions[this.state.stage].question}
@@ -94,22 +92,18 @@ export class Survey extends React.Component {
                                         {this.state.stage >= 4 && 
                                             <ProductQuestion />
                                         }
-                                    </Col>
-                                </Row>
-                            </div>  
-                        </div>
+                            </Col>  
+                        </Row>
                     </CSSTransition>
                 </TransitionGroup>
-                <div className="survey-bottom-row">
-                    <Row >
-                        <Col xs={8} xsOffset={2} md={8} mdOffset={2} className="survey-progress-bar-container">
+                <Row className="justify-content-center">
+                        <Col xs={10} className="survey-progress-bar-container">
                             <SurveyProgress 
                                 maxStages = {maxStages}
                                 stage = {this.state.stage}
                             />
                         </Col>
-                    </Row>
-                </div>
+                </Row>
             </div>
         )
     }

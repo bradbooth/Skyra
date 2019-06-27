@@ -24,3 +24,27 @@
         }
     }
 }
+
+
+.main-row-title {
+    white-space: pre-line;
+    font-size: 100px;
+    line-height: 104px;
+    font-weight: 900;
+}
+
+.masthead {
+    //height: 70vh;
+    min-height: 500px;
+    // background-image: url('/images/skincare.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.main-row-survey-button {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 25px;
+}

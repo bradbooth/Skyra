@@ -20,27 +20,37 @@ export class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                <Navbar staticTop={true} collapseOnSelect={true} >
-                    <Navbar.Header>
-                    <Navbar.Brand  >
-                        <NavLink to="/home" onClick={this.closeShoppingCart} className="header__title">SKÝRA</NavLink>
-                    </Navbar.Brand>
-                    <Navbar.Toggle />
-                    </Navbar.Header>
-                    <Navbar.Collapse>
-                    <Nav pullRight>
-                            <LinkContainer to="/home">
-                                <NavItem onClick={this.closeShoppingCart}>home</NavItem>
-                            </LinkContainer>
-                            <LinkContainer to="/product">
-                                <NavItem onClick={this.closeShoppingCart}>product</NavItem>
-                            </LinkContainer>
-                            <LinkContainer to="/login">
-                                <NavItem onClick={this.closeShoppingCart}>login</NavItem>
-                            </LinkContainer>
+                <Navbar fixed={top} collapseOnSelect={true} expand="sm" >
+                    
+                    <Nav.Link>
+                        <LinkContainer to="/home">
+                            <NavItem className="header-title" onClick={this.closeShoppingCart}>SKÝRA</NavItem>
+                        </LinkContainer>
+                    </Nav.Link>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+                    <Navbar.Collapse className="justify-content-end">
+                        <Nav >
+                            <Nav.Link>
+                                <LinkContainer to="/home">
+                                    <NavItem onClick={this.closeShoppingCart}>home</NavItem>
+                                </LinkContainer>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <LinkContainer to="/product">
+                                    <NavItem onClick={this.closeShoppingCart}>product</NavItem>
+                                </LinkContainer>
+                            </Nav.Link>
+                            <Nav.Link>
+                                <LinkContainer to="/login">
+                                    <NavItem onClick={this.closeShoppingCart}>login</NavItem>
+                                </LinkContainer>
+                            </Nav.Link>
                             
-                            <NavItem onClick={this.toggleShoppingCart}>
-                            <FontAwesomeIcon icon="shopping-cart" /></NavItem>
+                            <Nav.Link>
+                                <NavItem onClick={this.toggleShoppingCart}>
+                                <FontAwesomeIcon icon="shopping-cart" /></NavItem>
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
