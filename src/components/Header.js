@@ -19,8 +19,7 @@ export class Header extends React.Component {
 
     render() {
         return (
-            <div className="header">
-                <Navbar fixed={top} collapseOnSelect={true} expand="sm" >
+                <Navbar className="header"  collapseOnSelect={true} expand="sm" >
                     
                     <Nav.Link>
                         <LinkContainer to="/home">
@@ -31,30 +30,30 @@ export class Header extends React.Component {
 
                     <Navbar.Collapse className="justify-content-end">
                         <Nav >
-                            <Nav.Link>
+                            {/* eventKey required in order for collapseOnSelect to work */}
+                            <Nav.Link eventKey="1"> 
                                 <LinkContainer to="/home">
                                     <NavItem onClick={this.closeShoppingCart}>home</NavItem>
                                 </LinkContainer>
                             </Nav.Link>
-                            <Nav.Link>
+                            <Nav.Link eventKey="1">
                                 <LinkContainer to="/product">
                                     <NavItem onClick={this.closeShoppingCart}>product</NavItem>
                                 </LinkContainer>
                             </Nav.Link>
-                            <Nav.Link>
+                            <Nav.Link eventKey="1">
                                 <LinkContainer to="/login">
                                     <NavItem onClick={this.closeShoppingCart}>login</NavItem>
                                 </LinkContainer>
                             </Nav.Link>
                             
-                            <Nav.Link>
+                            <Nav.Link eventKey="1">
                                 <NavItem onClick={this.toggleShoppingCart}>
                                 <FontAwesomeIcon icon="shopping-cart" /></NavItem>
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
-            </div>
         )
     }
 }
