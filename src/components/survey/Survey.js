@@ -87,7 +87,7 @@ export class Survey extends React.Component {
                         <TransitionGroup className="transitionGroup">
                             <CSSTransition
                                 key={this.state.stage}
-                                timeout={800}
+                                timeout={timeout}
                                 classNames='fade'
                                 
                             >
