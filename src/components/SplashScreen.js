@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Col } from 'react-bootstrap'
+import Loader from './Loader'
 
 export class SplashScreen extends React.Component {
 // On componenet did mount -> push to homepage
@@ -16,6 +17,7 @@ export class SplashScreen extends React.Component {
             <div className="fadeOut">
                 <Col className="splashScreenTitle text-center align-middle" >
                     <h1 >SKÝRA</h1>
+                    <Loader/>
                 </Col>
             </div>
         )
