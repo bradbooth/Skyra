@@ -12,10 +12,9 @@ import TextQuestion from './surveyQuestions/TextQuestion'
 import CircleQuestion from './surveyQuestions/CircleQuestion'
 import ProductQuestion from './surveyQuestions/ProductQuestion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import SurveyProgress from './SurveyProgress'
-
 import surveyOptions from './surveyOptions.json'
+import Loader from '../Loader' 
 
 //import history from '../../routers/AppRouter'
 
@@ -35,12 +34,11 @@ export class Survey extends React.Component {
     }
 
     next = () => {
-        if(this.state.stage < maxStages){
+        if(this.state.stage <= maxStages){
             this.setState({
                 stage: this.state.stage + 1,
             })
         } else {
-            console.log("HEERE")
             this.props.history.push('/product')
             this.props.showSurvey(false)
         }
@@ -62,7 +60,6 @@ export class Survey extends React.Component {
 
     render() {
         
-        
         const stages = {
             1: {updateStore: this.props.updateSkintype},
             2: {updateStore: this.props.updateSensitive},
@@ -71,13 +68,11 @@ export class Survey extends React.Component {
             5: {updateStore: this.props.updateExfoliator}
         }
 
-        console.log(this.state.stage)
-
         return (
             <div className="survey-container">
                 <Container>
                     <Row>
-                        <Col 
+                        <Col xs={2}
                             className={"survey-arrow-left-container" + (this.state.stage == 1 ? " disabled" : "")}
                             onClick={this.previous}>
                             <FontAwesomeIcon icon="arrow-left"/>
@@ -92,7 +87,7 @@ export class Survey extends React.Component {
                                 
                             >
                                     
-                                <Col className="survey-options-container">
+                                <Col className="survey-options-container h-100">
                                             {this.state.stage <= maxStages && 
                                                 <CircleQuestion
                                                     question={surveyOptions[this.state.stage].question}
@@ -101,9 +96,13 @@ export class Survey extends React.Component {
                                                     updateState={stages[this.state.stage].updateStore}
                                                 />
                                             }
-                                            {/* {this.state.stage >= 4 && 
-                                                <ProductQuestion />
-                                            } */}
+                                            {this.state.stage > maxStages && 
+                                                <Loader 
+                                                    className="align-middle" 
+                                                    message={`Creating the perfect match`}
+                                                    func={this.next}
+                                                    timeout={5000}/>
+                                            }
                                 </Col>  
                             </CSSTransition>
                         </TransitionGroup>
@@ -111,10 +110,11 @@ export class Survey extends React.Component {
 
                     <Row className="survey-bottom-row justify-content-center align-items-end">
                         <Col xs={10} className="survey-progress-bar-container">
+                            {this.state.stage <= maxStages &&
                             <SurveyProgress 
                                 maxStages = {maxStages}
                                 stage = {this.state.stage}
-                            />
+                            />}
                         </Col>
                     </Row>
                 </Container>
