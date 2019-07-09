@@ -46,7 +46,7 @@
             {
                 "title": "Brightening",
                 "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
+                "image": "/images/sun.png"
             },
             {
                 "title": "Cleansing",
@@ -81,7 +81,12 @@
             {
                 "title": "Orange",
                 "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
+                "image": "/images/orange.png"
+            },
+            {
+                "title": "Coconut",
+                "description": "This is the description for the selected option",
+                "image": "/images/coconut.png"
             },
             {
                 "title": "Eucalyptus",

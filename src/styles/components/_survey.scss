@@ -180,9 +180,11 @@ body {
 /*Circle Questions*/
 
 .circle {
-  height: 150px;
-  width: 150px;
+  height: 148px;
+  width: 148px;
   background-color: #bbb;
+  background-repeat: no-repeat;
+  background-position: center; 
   border-radius: 50%;
   display: inline-block;
   margin: 15px;
