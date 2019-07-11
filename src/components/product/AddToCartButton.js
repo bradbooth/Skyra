@@ -14,7 +14,7 @@ export class AddToCartButton extends React.Component {
     addItemToCart = () => {
 
         const lineItemsToAdd = [{
-            variantId:  "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8xODc1MzY0NjQ5Mzc2MA==", //TODO - This should be pulled dynamically from products
+            variantId:  this.props.products[0].variants[0].id, // TODO - This should be chosen on some basis, not just the first one in the list
             quantity: 1,
             customAttributes: Object.keys(this.props.variants).map((item) => (
                 {
@@ -23,6 +23,9 @@ export class AddToCartButton extends React.Component {
                 }
             ))
         }]
+
+
+        console.log(this.props.products);
 
         const checkoutId = this.props.checkout.id
 
