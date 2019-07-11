@@ -31,12 +31,12 @@
             {
                 "title": "No",
                 "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
+                "image": "/images/surveyIcons/x.png"
             },
             {
                 "title": "Yes",
                 "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
+                "image": "/images/surveyIcons/checkmark.png"
             }
         ]
     },
@@ -44,22 +44,22 @@
         "question" : "I want to my facemask to",
         "options" : [
             {
-                "title": "Brightening",
+                "title": "Brighten",
                 "description": "This is the description for the selected option",
-                "image": "/images/sun.png"
+                "image": "/images/surveyIcons/sun.png"
             },
             {
-                "title": "Cleansing",
+                "title": "Cleanse",
+                "description": "This is the description for the selected option",
+                "image": "/images/surveyIcons/cleanse.png"
+            },
+            {
+                "title": "Soothe",
                 "description": "This is the description for the selected option",
                 "image": "https://via.placeholder.com/150"
             },
             {
-                "title": "Soothing",
-                "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
-            },
-            {
-                "title": "Hydration",
+                "title": "Hydrate",
                 "description": "This is the description for the selected option",
                 "image": "https://via.placeholder.com/150"
             },
@@ -81,22 +81,27 @@
             {
                 "title": "Orange",
                 "description": "This is the description for the selected option",
-                "image": "/images/orange.png"
+                "image": "/images/surveyIcons/orange.png"
             },
             {
                 "title": "Coconut",
                 "description": "This is the description for the selected option",
-                "image": "/images/coconut.png"
+                "image": "/images/surveyIcons/coconut.png"
+            },
+            {
+                "title": "Lavender",
+                "description": "This is the description for the selected option",
+                "image": "/images/surveyIcons/lavender.png"
             },
             {
                 "title": "Eucalyptus",
                 "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
+                "image": "/images/surveyIcons/eucalyptus.png"
             },
             {
                 "title": "Vanilla",
                 "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
+                "image": "/images/surveyIcons/vanilla.png"
             }
         ]
     },
