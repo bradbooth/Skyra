@@ -1,20 +1,34 @@
 import React from 'react'
 import { Grid, Row, Col, Button, ProgressBar } from "react-bootstrap";
 
-const Circle = ({title, action, updateState}) => (
-    <div>
-        <div 
-            className="circle"
-            onClick={ () => {
-                    action();
-                    updateState(title);
+
+
+
+const Circle = ({title, background, action, updateState}) => {
+
+    var circleStyle = {
+        backgroundImage: `url(${background})`
+    };
+
+    return (
+        <div>
+            <div 
+                className="circle"
+                style={circleStyle}
+                onClick={ () => {
+                        action();
+                        updateState(title);
+                    }
                 }
-            }
-        >
+            >
+            </div>
+            <h3>{title}</h3>
         </div>
-        <h3>{title}</h3>
-    </div>
-)
+    )
+}
+
+
+
 
 
 export class CircleQuestion extends React.Component {
@@ -31,6 +45,8 @@ export class CircleQuestion extends React.Component {
 
     render() {
 
+
+
         return (
 
             <div>
@@ -42,6 +58,7 @@ export class CircleQuestion extends React.Component {
                         <Circle 
                             key={i}
                             title={item.title}
+                            background={item.image}
                             action={this.props.action}
                             updateState={this.props.updateState}
                         >
