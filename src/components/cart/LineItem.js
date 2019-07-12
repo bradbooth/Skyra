@@ -157,7 +157,7 @@ export class LineItem extends React.Component {
                             (item, i) => <div 
                                             key={i} 
                                             className="line-item-custom-attribute">
-                                            {item.value}
+                                            {item.key + ": " + item.value}
                                         </div>)
                         }
                     </Col>

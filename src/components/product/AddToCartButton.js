@@ -5,7 +5,21 @@ import { Grid, Row, Col, Button, DropdownButton, MenuItem } from "react-bootstra
 
 import { startUpdateCheckout } from '../../actions/shopify';
 
+import { getCorrespondingProductIngredient } from '../survey/DetermineProduct'
 
+const getVariantTitle = (variantTitle) => {
+    switch(variantTitle){
+        case "base":
+            return "Base"
+        case "oil":
+            return "Essential Oil"
+        case "fragrance":
+            return "Fragrance"
+        default: 
+            return variantTitle   
+        
+    }
+}
 
 export class AddToCartButton extends React.Component {
 
@@ -18,14 +32,13 @@ export class AddToCartButton extends React.Component {
             quantity: 1,
             customAttributes: Object.keys(this.props.variants).map((item) => (
                 {
-                    key: item,
+                    key: getVariantTitle(item),
                     value: this.props.variants[item]
                 }
             ))
         }]
 
-
-        console.log(this.props.products);
+        console.log(lineItemsToAdd);
 
         const checkoutId = this.props.checkout.id
 
@@ -50,7 +63,8 @@ const mapStateToProps = (state) => {
         products: state.shopify.products,
         checkout: state.shopify.checkout,
         client: state.shopify.client,
-        variants: state.variant
+        variants: state.variant,
+        survey: state.survey
     }
 };
 

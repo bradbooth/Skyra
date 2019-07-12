@@ -7,3 +7,8 @@ export const startUpdateOil = (oil) => ({
     type: 'UPDATE_VARIANT_OIL',
     oil
 })
+
+export const startUpdateFragrance = (fragrance) => ({
+    type: 'UPDATE_VARIANT_FRAGRANCE',
+    fragrance
+})

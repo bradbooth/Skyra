@@ -1,8 +1,9 @@
-import productOptions from '../components/product/productOptions.json'
+import productVariants from '../components/product/productVariants.json'
 
 const VariantDefaultState = {
-    base:  productOptions.base.default,
-    oil: productOptions.oil.default
+    base:  productVariants.base.default,
+    oil: productVariants.oil.default,
+    fragrance: productVariants.fragrance.default
 };
 
 export default (state = VariantDefaultState, action) => {
@@ -16,6 +17,11 @@ export default (state = VariantDefaultState, action) => {
             return {
                 ...state,
                 oil: action.oil
+            }
+        case 'UPDATE_VARIANT_FRAGRANCE':
+            return {
+                ...state,
+                fragrance: action.fragrance
             }
         default:
             return state
