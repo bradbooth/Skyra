@@ -1,4 +1,4 @@
-import productVariants from '../components/product/productVariants.json'
+import { productVariants } from '../components/product/productVariants'
 
 const VariantDefaultState = {
     base:  productVariants.base.default,
@@ -22,6 +22,11 @@ export default (state = VariantDefaultState, action) => {
             return {
                 ...state,
                 fragrance: action.fragrance
+            }
+        case 'UPDATE_VARIANT_EXFOLIATOR':
+            return {
+                ...state,
+                exfoliator: action.exfoliator
             }
         default:
             return state

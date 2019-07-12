@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { Row, Col } from "react-bootstrap"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { startUpdateBase, startUpdateOil, startUpdateFragrance} from '../../actions/variant'
+import { startUpdateBase, startUpdateOil, startUpdateFragrance, startUpdateExfoliator} from '../../actions/variant'
 
-import variantOptions from './productVariants.json'
+import { productVariants } from './productVariants'
 import { getCorrespondingProductIngredient } from '../survey/DetermineProduct';
 
 const DropdownMenu = ({title, value, options, onChange}) => (
@@ -33,6 +33,8 @@ export class ProductOptions extends React.Component {
         this.props.updateBase(getCorrespondingProductIngredient("base", this.props.survey))
         this.props.updateOil(getCorrespondingProductIngredient("oil", this.props.survey))
         this.props.updateFragrance(getCorrespondingProductIngredient("fragrance", this.props.survey))
+        this.props.updateExfoliator(getCorrespondingProductIngredient("exfoliator", this.props.survey))
+
     }
     
     dropdownChanged = (e) => {
@@ -65,21 +67,28 @@ export class ProductOptions extends React.Component {
                         <DropdownMenu
                             title="Base" 
                             value={this.props.variants.base}
-                            options={variantOptions.base.options}
+                            options={productVariants.base.options}
                             onChange={(e) => this.props.updateBase(e.target.value)}
                         />
                         <DropdownMenu
                             title="Oil"
                             value={this.props.variants.oil}
-                            options={variantOptions.oil.options}
+                            options={productVariants.oil.options}
                             onChange={(e) => this.props.updateOil(e.target.value)}
                         />
 
                         <DropdownMenu
                             title="Fragrance"
                             value={this.props.variants.fragrance}
-                            options={variantOptions.fragrance.options}
+                            options={productVariants.fragrance.options}
                             onChange={(e) => this.props.updateFragrance(e.target.value)}
+                        />
+
+                        <DropdownMenu
+                            title="Exfoliator"
+                            value={this.props.variants.exfoliator}
+                            options={productVariants.exfoliator.options}
+                            onChange={(e) => this.props.updateExfoliator(e.target.value)}
                         />
                         
                     </Col>
@@ -100,7 +109,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
     updateBase: (base) => dispatch(startUpdateBase(base)),
     updateOil: (oil) => dispatch(startUpdateOil(oil)),
-    updateFragrance: (fragrance) => dispatch(startUpdateFragrance(fragrance))
+    updateFragrance: (fragrance) => dispatch(startUpdateFragrance(fragrance)),
+    updateExfoliator: (exfoliator) => dispatch(startUpdateExfoliator(exfoliator))
 });
   
 export default connect(mapStateToProps, mapDispatchToProps)(ProductOptions);

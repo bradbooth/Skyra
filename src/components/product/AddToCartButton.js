@@ -15,6 +15,8 @@ const getVariantTitle = (variantTitle) => {
             return "Essential Oil"
         case "fragrance":
             return "Fragrance"
+        case "exfoliator":
+            return "Exfoliator"
         default: 
             return variantTitle   
         

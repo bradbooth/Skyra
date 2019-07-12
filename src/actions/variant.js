@@ -12,3 +12,8 @@ export const startUpdateFragrance = (fragrance) => ({
     type: 'UPDATE_VARIANT_FRAGRANCE',
     fragrance
 })
+
+export const startUpdateExfoliator = (exfoliator) => ({
+    type: 'UPDATE_VARIANT_EXFOLIATOR',
+    exfoliator
+})

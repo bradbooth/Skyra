@@ -1,24 +1,8 @@
-
-
-const categories = ["Base", "Essential Oil", "Fragrance", "Exfoliator"]
-
 const NONE = "None"
 
 //Clays
 const KAOLIN = "Kaolin Clay"
-const bases = [KAOLIN]
 
-//Fragrances
-const ORANGE = "Orange"
-const fragrances = [ORANGE, NONE]
-
-//Exfoliators
-const CHESTNUT = "Chestnut"
-const exfoliators = [CHESTNUT, NONE]
-
-//Essential Oils
-const TEATREE = "Teatree"
-const essentialOils = [TEATREE, NONE]
 
 export function getCorrespondingProductIngredient (title, survey){
     var ingredient;
