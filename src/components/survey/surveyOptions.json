@@ -1,11 +1,12 @@
-{
-    "1": {
+[
+    {
         "question" : "What is your skintype?",
         "options" : [
             {
                 "title": "Normal",
                 "description": "This is the description for the selected option",
-                "image": "https://via.placeholder.com/150"
+                "image": "https://via.placeholder.com/150",
+                "ingredient": "Kaolin"
             },
             {
                 "title": "Dry",
@@ -24,7 +25,7 @@
             }
         ]
     },
-    "2": {
+    {
         "question" : "Do you have sensitive skin?",
         "options" : [
             {
@@ -39,7 +40,7 @@
             }
         ]
     },
-    "3": {
+    {
         "question" : "I want to my facemask to",
         "options" : [
             {
@@ -74,7 +75,7 @@
             }
         ]
     },
-    "4": {
+    {
         "question" : "Select a fragrance",
         "options" : [
             {
@@ -94,7 +95,7 @@
             }
         ]
     },
-    "5": {
+    {
         "question" : "Select an exfoliator",
         "options" : [
             {
@@ -114,4 +115,4 @@
             }
         ]
     }
-}
+]

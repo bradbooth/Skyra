@@ -1,0 +1,23 @@
+{
+    "base" :
+    {
+        "default": "Kaolin",
+        "options": [
+            "Kaolin"
+        ]
+    },
+    "oil" :
+    {
+        "default": "None",
+        "options": [
+            "Teatree", "None"
+        ]
+    },
+    "fragrance" :
+    {
+        "default": "None",
+        "options": [
+            "Orange", "Eucalyptus", "Vanilla", "None"
+        ]
+    }
+}

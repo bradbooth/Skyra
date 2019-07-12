@@ -1,12 +1,14 @@
 import surveyOptions from '../components/survey/surveyOptions.json'
 
+const NONE = "None"
 
 const SurveyDefaultState = {
     active: false,
-    skintype: surveyOptions[1].options[0].title,
+    skintype: surveyOptions[0].options[0].title,
+    sensitive: surveyOptions[1].options[0].title,
     actiontype: surveyOptions[2].options[0].title,
-    fragrancetype: surveyOptions[3].options[0].title,
-    exfoliatortype: surveyOptions[4].options[0].title    
+    fragrancetype: NONE,
+    exfoliatortype: NONE    
 };
 
 export default (state = SurveyDefaultState, action) => {

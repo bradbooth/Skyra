@@ -28,13 +28,13 @@ export class Survey extends React.Component {
         super(props);
 
         this.state = {
-           stage: 1,
+           stage: 0,
            nextOption: 'Next'
         };
     }
 
     next = () => {
-        if(this.state.stage <= maxStages){
+        if(this.state.stage < maxStages){
             this.setState({
                 stage: this.state.stage + 1,
             })
@@ -46,7 +46,7 @@ export class Survey extends React.Component {
 
     previous = () => {
         //TODO - Add protection
-        if(this.state.stage > 1){
+        if(this.state.stage > 0){
             this.setState({
                 nextOption: 'Next'
             })
@@ -61,11 +61,11 @@ export class Survey extends React.Component {
     render() {
         
         const stages = {
-            1: {updateStore: this.props.updateSkintype},
-            2: {updateStore: this.props.updateSensitive},
-            3: {updateStore: this.props.updateActiontype},
-            4: {updateStore: this.props.updateFragrancetype},
-            5: {updateStore: this.props.updateExfoliator}
+            0: {updateStore: this.props.updateSkintype},
+            1: {updateStore: this.props.updateSensitive},
+            2: {updateStore: this.props.updateActiontype},
+            3: {updateStore: this.props.updateFragrancetype},
+            4: {updateStore: this.props.updateExfoliator}
         }
 
         return (
@@ -73,7 +73,7 @@ export class Survey extends React.Component {
                 <Container>
                     <Row>
                         <Col xs={2}
-                            className={"survey-arrow-left-container" + (this.state.stage == 1 ? " disabled" : "")}
+                            className={"survey-arrow-left-container" + (this.state.stage == 0 || this.state.stage == maxStages ? " disabled" : "")}
                             onClick={this.previous}>
                             <FontAwesomeIcon icon="arrow-left"/>
                         </Col>
@@ -86,9 +86,8 @@ export class Survey extends React.Component {
                                 classNames='fade'
                                 
                             >
-                                    
                                 <Col className="survey-options-container h-100">
-                                            {this.state.stage <= maxStages && 
+                                            {this.state.stage < maxStages && 
                                                 <CircleQuestion
                                                     question={surveyOptions[this.state.stage].question}
                                                     options={surveyOptions[this.state.stage].options}
@@ -96,7 +95,7 @@ export class Survey extends React.Component {
                                                     updateState={stages[this.state.stage].updateStore}
                                                 />
                                             }
-                                            {this.state.stage > maxStages && 
+                                            {this.state.stage >= maxStages && 
                                                 <Loader 
                                                     className="align-middle" 
                                                     message={`Creating the perfect match`}
@@ -110,7 +109,7 @@ export class Survey extends React.Component {
 
                     <Row className="survey-bottom-row justify-content-center align-items-end">
                         <Col xs={10} className="survey-progress-bar-container">
-                            {this.state.stage <= maxStages &&
+                            {this.state.stage < maxStages &&
                             <SurveyProgress 
                                 maxStages = {maxStages}
                                 stage = {this.state.stage}
