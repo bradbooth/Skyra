@@ -28,7 +28,7 @@ export const productVariants = {
     },
     "colour" :
     {
-        "default": "Blue",
+        "default": "None",
         "options": ["No options listed"]
     }
 }
