@@ -28,6 +28,11 @@ export default (state = VariantDefaultState, action) => {
                 ...state,
                 exfoliator: action.exfoliator
             }
+        case 'UPDATE_VARIANT_COLOUR':
+            return {
+                ...state,
+                colour: action.colour
+            }
         default:
             return state
     }

@@ -17,3 +17,8 @@ export const startUpdateExfoliator = (exfoliator) => ({
     type: 'UPDATE_VARIANT_EXFOLIATOR',
     exfoliator
 })
+
+export const startUpdateColour = (colour) => ({
+    type: 'UPDATE_VARIANT_COLOUR',
+    colour
+})
