@@ -9,26 +9,73 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export class Header extends React.Component {
 
+    constructor(props) {
+        super(props);
+        // this.navbarCollapseHide = this.navbarCollapseHide.bind(this);
+        document.addEventListener('click', this.handleDocumentClick, true);
+
+        this.state = {
+            navbarCollapse: "justify-content-end"
+        }
+    }
+
+    // If we click outside the navbar we want to collapse it
+    handleDocumentClick = (e) => {
+        const container = this._element;
+        if (e.target !== container && !container.contains(e.target)) {
+            this.navbarCollapse()
+        } 
+    }
+
     toggleShoppingCart = () => {
         this.props.showCart(!this.props.shoppingCartMenuOpen)
     }
 
-    closeShoppingCart = () => {
+    closeShoppingCart = (e) => {
         this.props.showCart(false)
+    }
+
+    navbarShow = () => {
+        this.setState({
+            navbarExapnded: true
+        })
+    }
+
+    navbarCollapse = () => {
+        this.setState({
+            navbarExapnded: false
+        })
+    }
+
+    navbarToggle = () => {
+        this.setState({
+            navbarExapnded: !this.state.navbarExapnded
+        })
+        this.closeShoppingCart()
     }
 
     render() {
         return (
-                <Navbar className="header"  collapseOnSelect={true} expand="sm" fixed="top">
+            <div >
+                <Navbar className="header"
+                        onSelect={this.navbarCollapse} 
+                        expand="sm" 
+                        fixed="top"
+                        onToggle={() => console.debug("Navbar toggle")} 
+                        expanded={this.state.navbarExapnded}>
                     
                     <Nav.Link>
                         <LinkContainer to="/home">
                             <NavItem className="header-title" onClick={this.closeShoppingCart}>SKÝRA</NavItem>
                         </LinkContainer>
                     </Nav.Link>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle 
+                        ref={(c)=> (this._element = c)}
+                        aria-controls="basic-navbar-nav" 
+                        onClick={this.closeShoppingCart && this.navbarToggle}
+                    />
 
-                    <Navbar.Collapse className="justify-content-end">
+                    <Navbar.Collapse className="justify-content-end" >
                         <Nav >
                             {/* eventKey required in order for collapseOnSelect to work */}
                             <Nav.Link eventKey="1"> 
@@ -54,6 +101,7 @@ export class Header extends React.Component {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+            </div>
         )
     }
 }

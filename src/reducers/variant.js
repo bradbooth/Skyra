@@ -3,7 +3,8 @@ import { productVariants } from '../components/product/productVariants'
 const VariantDefaultState = {
     base:  productVariants.base.default,
     oil: productVariants.oil.default,
-    fragrance: productVariants.fragrance.default
+    fragrance: productVariants.fragrance.default,
+    colour: productVariants.colour.default
 };
 
 export default (state = VariantDefaultState, action) => {

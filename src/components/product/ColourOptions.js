@@ -13,7 +13,7 @@ export class ColorOptions extends React.Component {
         super(props);
 
         this.state = {
-          selectedColour: "#FF5E45"
+          selectedColour: this.props.variant.colour
         };
     }
 
@@ -69,7 +69,7 @@ export class ColorOptions extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        state
+        variant: state.variant
     }
 };
 
