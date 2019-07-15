@@ -70,7 +70,8 @@ module.exports = (env) => {
       publicPath: '/dist/',
       watchOptions: {
         poll: true
-      }
+      },
+      disableHostCheck: true //Insecure - only for dev server!
     }
   };
 };
