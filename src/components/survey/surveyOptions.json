@@ -106,7 +106,7 @@
             {
                 "title": "Peach",
                 "description": "This is the description for the selected option",
-                "image": "/images/surveyIcons/paech.png"
+                "image": "https://via.placeholder.com/150"
             },
             {
                 "title": "None",

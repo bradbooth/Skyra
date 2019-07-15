@@ -8,6 +8,7 @@ import { startUpdateSkintype,
         startUpdateFragrancetype,
         startUpdateExfoliatortype,
         startShowSurvey } from '../../actions/survey';
+import { startUpdateColour } from '../../actions/variant';
 import CircleQuestion from './surveyQuestions/CircleQuestion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import SurveyProgress from './SurveyProgress'
@@ -69,7 +70,8 @@ export class Survey extends React.Component {
             1: {updateStore: this.props.updateSensitive},
             2: {updateStore: this.props.updateActiontype},
             3: {updateStore: this.props.updateFragrancetype},
-            4: {updateStore: this.props.updateExfoliator}
+            4: {updateStore: this.props.updateExfoliator},
+            5: {updateStore: this.props.updateColour}
         }
 
         return (
@@ -147,6 +149,7 @@ const mapDispatchToProps = (dispatch) => ({
     updateActiontype: (actionType) => dispatch(startUpdateActiontype(actionType)),
     updateFragrancetype: (fragranceType) => dispatch(startUpdateFragrancetype(fragranceType)),
     updateExfoliator: (exfoliator) => dispatch(startUpdateExfoliatortype(exfoliator)),
+    updateColour: (colour) => dispatch(startUpdateColour(colour)),
     showSurvey: (bool) => dispatch(startShowSurvey(bool))
 
 });

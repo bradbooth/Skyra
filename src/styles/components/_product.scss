@@ -36,15 +36,31 @@
     justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
 }
 
-.dot {
-    height: 25px;
-    width: 25px;
+.colour-option {
+    height: 50px;
+    width: 50px;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
+    margin: 2px;
+    cursor: pointer;
+    opacity: 0.7;
 }
+
+.colour-option-selected {
+    border: solid black 1px !important;
+    box-shadow: 0px 0px 10px 0px;
+    opacity: 1;
+}
+
+.colour-option:hover {
+    box-shadow: 0px 0px 10px 0px ;
+    opacity: 1;
+    //border: solid black 1px;
+  }
 
 .ingredientTitle {
     font-weight: 900;

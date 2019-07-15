@@ -38,18 +38,3 @@
         font-size: $s-size;
     }
 }
-
-.dotContainer {
-    
-    display: flex;
-    justify-content: left;
-
-    .dot {
-        height: 25px;
-        width: 25px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        margin: 2px;
-    }
-}

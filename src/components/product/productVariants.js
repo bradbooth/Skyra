@@ -25,5 +25,10 @@ export const productVariants = {
     {
         "default": "None",
         "options": surveyOptions[4].options.map((item) => (item.title))
+    },
+    "colour" :
+    {
+        "default": "Blue",
+        "options": ["No options listed"]
     }
 }
