@@ -1,13 +1,15 @@
 .header {
   margin-bottom: 0;
-
+  background-color: $off-white;
+  box-shadow: 0px -9px 28px -11px rgba(0,0,0,0.75);
+  
   .header-title {
     color: $dark-grey;
     font-weight: 900;
   }
 
   .navbar {
-    background-color: transparent;
+    
     background-image: none;
     margin-bottom: 0;
   }

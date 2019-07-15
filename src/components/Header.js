@@ -19,7 +19,7 @@ export class Header extends React.Component {
 
     render() {
         return (
-                <Navbar className="header"  collapseOnSelect={true} expand="sm" >
+                <Navbar className="header"  collapseOnSelect={true} expand="sm" fixed="top">
                     
                     <Nav.Link>
                         <LinkContainer to="/home">
