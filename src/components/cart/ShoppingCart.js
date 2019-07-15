@@ -35,7 +35,7 @@ export class ShoppingCart extends React.Component {
                     {this.props.checkout.lineItems.map((item, i) => (
                         <CSSTransition
                         key={item.id}
-                        timeout={350}
+                        timeout={850}
                         classNames='fade'
                         >
                             <LineItem key={i} {...item}/>

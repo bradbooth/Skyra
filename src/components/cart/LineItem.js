@@ -31,6 +31,12 @@ export class LineItem extends React.Component {
 
     // TODO - Violating DRY, group decrement, increment, set into one function perhaps?
     decrementQuantity = () => {
+        
+        // This is an antipattern!!! We do this to hopefully make the experience more fluid.
+        // We show the change in shopping cart amount before we've actually validated
+        // with shopify that the amount is valid - we elimnate the lag between the 
+        // button press and shopify validation
+
         if(this.props.quantity > 0){
             //Decrement the quantity by 1
             this.setState({
@@ -42,9 +48,14 @@ export class LineItem extends React.Component {
                 id: this.props.id, 
                 quantity: (this.props.quantity - 1)
             }]
-    
+
+            // Update users shopify cart
             this.props.client.checkout.updateLineItems(checkoutId, lineItemsToUpdate).then(res => {
                 this.props.updateCheckout(res)
+                // Once response is received, then we can update the state to match
+                this.setState({
+                    quantity: (this.props.quantity)
+                })
             });
         }
     }
@@ -63,6 +74,9 @@ export class LineItem extends React.Component {
 
         this.props.client.checkout.updateLineItems(checkoutId, lineItemsToUpdate).then(res => {
             this.props.updateCheckout(res)
+            this.setState({
+                quantity: (this.props.quantity)
+            })
         });
 
     }
@@ -92,11 +106,9 @@ export class LineItem extends React.Component {
         }
     }
 
-
-
     //Set the hover state in order to apply the hover
     //css style on only the corresponding button without using
-    // css:hover class which would apply it to the other buttons
+    //css:hover class which would apply it to the other buttons
     setHoverOnPlus = (b) =>{
         this.setState({
             plusHover: b
@@ -140,7 +152,7 @@ export class LineItem extends React.Component {
                         />
                         <span 
                             className={plusButtonStyle}
-                            onClick={this.incrementQuantity} 
+                            onClick={this.incrementQuantity}
                             onMouseEnter={() => this.setHoverOnPlus(true)}
                             onMouseLeave={() => this.setHoverOnPlus(false)}>
                             <FontAwesomeIcon icon="plus"/>
