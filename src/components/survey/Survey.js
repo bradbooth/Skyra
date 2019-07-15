@@ -1,16 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import { Grid, Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import { startUpdateSkintype, 
         startUpdateSensitive,
         startUpdateActiontype, 
         startUpdateFragrancetype,
         startUpdateExfoliatortype,
         startShowSurvey } from '../../actions/survey';
-import TextQuestion from './surveyQuestions/TextQuestion'
 import CircleQuestion from './surveyQuestions/CircleQuestion'
-import ProductQuestion from './surveyQuestions/ProductQuestion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import SurveyProgress from './SurveyProgress'
 import surveyOptions from './surveyOptions.json'
@@ -33,6 +31,7 @@ export class Survey extends React.Component {
         };
     }
 
+    // Go to the next stage
     next = () => {
         if(this.state.stage < maxStages){
             this.setState({
@@ -44,8 +43,8 @@ export class Survey extends React.Component {
         }
     }
 
+    // Go to the previous stage
     previous = () => {
-        //TODO - Add protection
         if(this.state.stage > 0){
             this.setState({
                 nextOption: 'Next'
@@ -55,6 +54,13 @@ export class Survey extends React.Component {
                 stage: this.state.stage - 1,
             })
         }
+    }
+
+    // Move directly to given stage
+    setStage = (stage) => {
+        this.setState({
+            stage
+        })
     }
 
 
@@ -113,6 +119,7 @@ export class Survey extends React.Component {
                             <SurveyProgress 
                                 maxStages = {maxStages}
                                 stage = {this.state.stage}
+                                setStage = {this.setStage}
                             />}
                         </Col>
                     </Row>
