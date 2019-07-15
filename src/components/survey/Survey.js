@@ -14,8 +14,6 @@ import SurveyProgress from './SurveyProgress'
 import surveyOptions from './surveyOptions.json'
 import Loader from '../Loader' 
 
-//import history from '../../routers/AppRouter'
-
 const timeout = 800
 
 const maxStages = Object.keys(surveyOptions).length;
@@ -78,11 +76,14 @@ export class Survey extends React.Component {
             <div className="survey-container">
                 <Container>
                     <Row>
-                        <Col xs={2}
-                            className={"survey-arrow-left-container" + (this.state.stage == 0 || this.state.stage == maxStages ? " disabled" : "")}
-                            onClick={this.previous}>
-                            <FontAwesomeIcon icon="arrow-left"/>
-                        </Col>
+                        {/* Ensure arrow is only shown when survey is avaliable */}
+                        {this.state.stage < maxStages && 
+                            <Col xs={2}
+                                className={"survey-arrow-left-container" + (this.state.stage == 0 || this.state.stage >= maxStages ? " disabled" : "")}
+                                onClick={this.previous}>
+                                <FontAwesomeIcon icon="arrow-left"/>
+                            </Col>
+                        }
                     </Row>
                     <Row className="survey-top-row justify-content-center">
                         <TransitionGroup className="transitionGroup">
@@ -93,21 +94,23 @@ export class Survey extends React.Component {
                                 
                             >
                                 <Col className="survey-options-container h-100">
-                                            {this.state.stage < maxStages && 
-                                                <CircleQuestion
-                                                    question={surveyOptions[this.state.stage].question}
-                                                    options={surveyOptions[this.state.stage].options}
-                                                    action={this.next}
-                                                    updateState={stages[this.state.stage].updateStore}
-                                                />
-                                            }
-                                            {this.state.stage >= maxStages && 
-                                                <Loader 
-                                                    className="align-middle" 
-                                                    message={`Creating the perfect match`}
-                                                    func={this.next}
-                                                    timeout={5000}/>
-                                            }
+                                    {/* Ensure survey is only shown while not complete */}
+                                    {this.state.stage < maxStages && 
+                                        <CircleQuestion
+                                            question={surveyOptions[this.state.stage].question}
+                                            options={surveyOptions[this.state.stage].options}
+                                            action={this.next}
+                                            updateState={stages[this.state.stage].updateStore}
+                                        />
+                                    }
+                                    {/* Show loading icon on survey completion */}
+                                    {this.state.stage >= maxStages && 
+                                        <Loader 
+                                            className="align-middle" 
+                                            message={`Creating the perfect match`}
+                                            func={this.next}
+                                            timeout={5000}/>
+                                    }
                                 </Col>  
                             </CSSTransition>
                         </TransitionGroup>
