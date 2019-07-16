@@ -76,7 +76,7 @@
         ]
     },
     {
-        "question" : "Select a fragrance",
+        "question" : "I want my face mask to smell like...",
         "options" : [
             {
                 "title": "Orange",
@@ -135,6 +135,31 @@
             },
             {
                 "title": "Chestnut",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            }
+        ]
+    },
+    {
+        "question" : "I want my face mask to be...",
+        "options" : [
+            {
+                "title": "Blue",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Red",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "Green",
+                "description": "This is the description for the selected option",
+                "image": "https://via.placeholder.com/150"
+            },
+            {
+                "title": "No Colour",
                 "description": "This is the description for the selected option",
                 "image": "https://via.placeholder.com/150"
             }

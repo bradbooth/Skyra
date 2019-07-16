@@ -109,7 +109,7 @@ export class Survey extends React.Component {
                                     {this.state.stage >= maxStages && 
                                         <Loader 
                                             className="align-middle" 
-                                            message={`Creating the perfect match`}
+                                            message={`Creating your custom face mask`}
                                             func={this.next}
                                             timeout={5000}/>
                                     }
