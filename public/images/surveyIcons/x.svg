@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 150 150" style="enable-background:new 0 0 150 150;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;fill:#E0F3FD;}
+	.st1{opacity:7.000000e-002;}
+	.st2{fill:#140B0C;}
+	.st3{fill:#E53A39;}
+	.st4{display:none;}
+	.st5{display:inline;fill:none;stroke:#000000;stroke-width:3;stroke-miterlimit:10;}
+</style>
+<g id="Layer_1">
+	<rect y="0" class="st0" width="150" height="150"/>
+	<g>
+		<g class="st1">
+			
+				<rect x="69.9" y="28" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -33.5594 77.9806)" class="st2" width="14.9" height="103"/>
+			
+				<rect x="69.9" y="28" transform="matrix(0.7071 0.7071 -0.7071 0.7071 78.8707 -31.4105)" class="st2" width="14.9" height="103"/>
+		</g>
+		<g>
+			
+				<rect x="69.9" y="23.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -30.3774 76.6626)" class="st3" width="14.9" height="103"/>
+			
+				<rect x="69.9" y="23.5" transform="matrix(0.7071 0.7071 -0.7071 0.7071 75.6887 -32.7286)" class="st3" width="14.9" height="103"/>
+		</g>
+	</g>
+</g>
+<g id="Layer_2" class="st4">
+	<circle class="st5" cx="75" cy="75" r="75"/>
+</g>
+</svg>
