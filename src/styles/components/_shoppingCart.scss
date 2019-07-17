@@ -59,11 +59,23 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.cart-main-container {
-  font-size: 20px;
-  overflow: scroll;
-  width: 400px !important;
+@include media-breakpoint-up(xs){
+  .cart-main-container {
+    font-size: 20px;
+    overflow: scroll;
+    width: 100% !important;
+  }
 }
+
+@include media-breakpoint-up(sm){
+  .cart-main-container {
+    font-size: 20px;
+    overflow: scroll;
+    width: 400px !important;
+  }
+}
+
+
 
 .checkout-text-right {
   text-align: right;

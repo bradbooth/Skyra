@@ -26,12 +26,33 @@
 }
 
 
-.main-row-title {
-    white-space: pre-line;
-    font-size: 100px;
-    line-height: 104px;
-    font-weight: 900;
+@include media-breakpoint-up(xs){
+    .main-row-title {
+        white-space: pre-line;
+        font-size: 70px;
+        line-height: 60px;
+        font-weight: 900;
+    }
 }
+
+@include media-breakpoint-up(sm){
+    .main-row-title {
+        white-space: pre-line;
+        font-size: 80px;
+        line-height: 70px;
+        font-weight: 900;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .main-row-title {
+        white-space: pre-line;
+        font-size: 100px;
+        line-height: 104px;
+        font-weight: 900;
+    }
+}
+
 
 .masthead {
     //height: 70vh;
